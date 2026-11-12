@@ -1,0 +1,10 @@
+# 字型檔不進 git（說明頁 docs/index.html 內嵌的裁切樣張除外）
+*.ttf
+*.otf
+*.ttc
+*.woff
+*.woff2
+*.zip
+*.part
+__pycache__/
+.DS_Store

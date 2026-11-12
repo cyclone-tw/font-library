@@ -1,0 +1,522 @@
+# font-library 字型清單（唯一正本）
+#
+# 每套字型一筆 [[font]]。改這個檔之後跑：
+#   python3 scripts/fontlib.py check      # 檢查欄位
+#   python3 scripts/fontlib.py fetch <id> # 下載並把 sha256 寫進 fonts.lock.json
+#
+# 欄位說明見 README.md「清單格式」。授權欄位要讀過上游授權原文才填，
+# 並在 verified 寫查證日期；不要從部落格或記憶抄。
+
+schema = 1
+
+# ───────────── 注音字型（bpmfvs 規格，ButTaiwan） ─────────────
+
+[[font]]
+id = "bpmf-zihi-kai-std"
+name = "字嗨注音標楷"
+name_en = "Bpmf Zihi Kai Std"
+style = "楷書"
+features = ["注音", "IVS 選破音字"]
+use = ["低年級學習單", "識字教材", "注音網頁"]
+notes = "依教育部標準字體做的楷書注音字型，專案寫明供低年級教育使用。多音字預設第一讀音，其他讀音用 IVS（U+E01E0 起）選。"
+
+[font.source]
+kind = "github-release"
+repo = "ButTaiwan/bpmfvs"
+tag = "v1.500"
+asset = "BpmfZihiKaiStd.zip"
+member = "BpmfZihiKaiStd-Regular.ttf"
+license_members = ["LICENSE-ZihiKaiStd.txt", "NOTICE.txt", "LICENSE-2.0.txt"]
+
+[font.license]
+spdx = ["CC-BY-4.0", "OFL-1.1"]
+summary = "漢字部分 CC BY 4.0，漢字以外 OFL 1.1；規格與程式 Apache 2.0。"
+commercial = true
+modify = true
+attribution_required = true
+reserved_names = ["字嗨", "Zihi"]
+attribution = "字型：字嗨注音標楷 © 2020 But Ko（漢字 CC BY 4.0／其他 OFL 1.1），https://github.com/ButTaiwan/bpmfvs"
+verified = "2026-11-12"
+
+[font.web]
+google_fonts = "Bpmf Zihi Kai Std"
+
+[[font]]
+id = "bpmf-iansui"
+name = "注音芫荽"
+name_en = "Bpmf Iansui"
+style = "手寫楷"
+features = ["注音", "IVS 選破音字"]
+use = ["識字教材", "學習單", "注音網頁"]
+notes = "芫荽（學習用台灣繁體字型）的注音版，筆畫清楚、檔案小。"
+
+[font.source]
+kind = "github-release"
+repo = "ButTaiwan/bpmfvs"
+tag = "v1.500"
+asset = "BpmfIansui.zip"
+member = "BpmfIansui-Regular.ttf"
+license_members = ["LICENSE-Iansui.txt", "NOTICE.txt", "LICENSE-2.0.txt"]
+
+[font.license]
+spdx = ["OFL-1.1"]
+summary = "OFL 1.1；規格與程式 Apache 2.0。"
+commercial = true
+modify = true
+attribution_required = false
+reserved_names = []
+attribution = "字型：注音芫荽 © 2022 But Ko（OFL 1.1），https://github.com/ButTaiwan/bpmfvs"
+verified = "2026-11-12"
+
+[font.web]
+google_fonts = "Bpmf Iansui"
+
+[[font]]
+id = "bpmf-huninn"
+name = "注音粉圓"
+name_en = "Bpmf Huninn"
+style = "圓體"
+features = ["注音", "IVS 選破音字"]
+use = ["低年級標題", "活潑的學習單", "注音網頁"]
+notes = "jf open 粉圓的注音版。"
+
+[font.source]
+kind = "github-release"
+repo = "ButTaiwan/bpmfvs"
+tag = "v1.500"
+asset = "BpmfHuninn.zip"
+member = "BpmfHuninn-Regular.ttf"
+license_members = ["LICENSE-Huninn.txt", "NOTICE.txt", "LICENSE-2.0.txt"]
+
+[font.license]
+spdx = ["OFL-1.1"]
+summary = "OFL 1.1；規格與程式 Apache 2.0。"
+commercial = true
+modify = true
+attribution_required = false
+reserved_names = []
+attribution = "字型：注音粉圓 © 2025 But Ko（OFL 1.1），https://github.com/ButTaiwan/bpmfvs"
+verified = "2026-11-12"
+
+[font.web]
+google_fonts = "Bpmf Huninn"
+
+# ───────────── 拼音字型 ─────────────
+
+[[font]]
+id = "tw-pinyin-kai"
+name = "臺灣拼音楷"
+name_en = "Taiwan Pinyin Kai"
+style = "楷書"
+features = ["漢語拼音", "詞語自動判斷多音字", "IVS 選讀音"]
+use = ["新住民子女、外籍生的拼音教材"]
+notes = "標的是漢語拼音，不是注音。讀音採臺灣教育部標準。Office 不執行詞語規則，要先用作者的校正器固定讀音。"
+
+[font.source]
+kind = "github-release"
+repo = "FW1201/tw-pinyin-font"
+tag = "v1.000"
+asset = "TaiwanPinyinKai-Regular.ttf"
+license_url = "https://raw.githubusercontent.com/FW1201/tw-pinyin-font/v1.000/OFL.txt"
+
+[font.license]
+spdx = ["OFL-1.1"]
+summary = "OFL 1.1（基底為霞鶩文楷 TC）。"
+commercial = true
+modify = true
+attribution_required = false
+reserved_names = []
+attribution = "字型：臺灣拼音楷 © 2026 The Taiwan Pinyin Kai Project Authors（OFL 1.1），https://github.com/FW1201/tw-pinyin-font"
+verified = "2026-11-12"
+
+[font.web]
+google_fonts = ""
+
+# ───────────── 楷書 ─────────────
+
+[[font]]
+id = "tw-kai"
+name = "全字庫正楷體"
+name_en = "TW-Kai"
+style = "楷書"
+features = ["政府標準字形", "收字量大"]
+use = ["正式文件", "學習單", "udl-learning 的 --kai 備援"]
+notes = "數位發展部全字庫。官方提供兩種授權擇一：政府資料開放授權條款第 1 版，或 OFL 1.1。本清單選 OFL 1.1。壓縮檔內有多個檔案，member 用萬用字元比對。"
+
+[font.source]
+kind = "url"
+url = "https://data.cns11643.gov.tw/opendata/Fonts_Kai.zip"
+version = "20261028"
+homepage = "https://data.gov.tw/dataset/5961"
+member = "TW-Kai.ttf"
+
+[font.license]
+spdx = ["OFL-1.1"]
+summary = "擇一授權：OFL 1.1（本清單採用）或政府資料開放授權條款第 1 版，不能兩者同時主張。"
+commercial = true
+modify = true
+attribution_required = false
+reserved_names = []
+attribution = "字型：全字庫正楷體，數位發展部（OFL 1.1），https://data.gov.tw/dataset/5961"
+verified = "2026-11-12"
+
+[font.web]
+google_fonts = ""
+
+[[font]]
+id = "tw-sung"
+name = "全字庫正宋體"
+name_en = "TW-Sung"
+style = "明體"
+features = ["政府標準字形", "收字量大"]
+use = ["正式文件", "閱讀測驗內文"]
+notes = "與全字庫正楷體同一個資料集，授權相同。"
+
+[font.source]
+kind = "url"
+url = "https://data.cns11643.gov.tw/opendata/Fonts_Sung.zip"
+version = "20261028"
+homepage = "https://data.gov.tw/dataset/5961"
+member = "TW-Sung.ttf"
+
+[font.license]
+spdx = ["OFL-1.1"]
+summary = "擇一授權：OFL 1.1（本清單採用）或政府資料開放授權條款第 1 版。"
+commercial = true
+modify = true
+attribution_required = false
+reserved_names = []
+attribution = "字型：全字庫正宋體，數位發展部（OFL 1.1），https://data.gov.tw/dataset/5961"
+verified = "2026-11-12"
+
+[font.web]
+google_fonts = ""
+
+[[font]]
+id = "edukai"
+name = "教育部標準楷書"
+name_en = "TW-MOE-Std-Kai"
+style = "楷書"
+features = ["教育部標準字體"]
+use = ["只整檔安裝在電腦上，用於紙本學習單"]
+notes = "授權禁止改作：不能裁字、不能轉成網頁字型、不能修改。舊下載網址已失效（2026-11-12 測得 404），請到教育部語文成果網手動下載。網頁需要標準楷書時，改用字嗨注音標楷或全字庫正楷體。"
+
+[font.source]
+kind = "manual"
+homepage = "https://language.moe.gov.tw/"
+version = "3.00"
+
+[font.license]
+spdx = ["CC-BY-ND-3.0-TW"]
+summary = "創用 CC 姓名標示－禁止改作 3.0 臺灣版：可商用，須標示「中華民國教育部」，不可改作。"
+commercial = true
+modify = false
+attribution_required = true
+reserved_names = []
+attribution = "字型：教育部標準楷書，中華民國教育部（CC BY-ND 3.0 TW）"
+verified = "2026-11-12"
+
+[font.web]
+google_fonts = ""
+
+[[font]]
+id = "lxgw-wenkai-tc"
+name = "霞鶩文楷 TC"
+name_en = "LXGW WenKai TC"
+style = "手寫楷"
+features = ["三種字重"]
+use = ["閱讀文章內文", "簡報", "網頁內文"]
+notes = "台灣字形的文楷，筆畫柔和，長文閱讀舒服。"
+
+[font.source]
+kind = "github-release"
+repo = "lxgw/LxgwWenkaiTC"
+tag = "v1.530"
+asset = "LXGWWenKaiTC-Regular.ttf"
+license_url = "https://raw.githubusercontent.com/lxgw/LxgwWenkaiTC/v1.530/OFL.txt"
+
+[font.license]
+spdx = ["OFL-1.1"]
+summary = "OFL 1.1。"
+commercial = true
+modify = true
+attribution_required = false
+reserved_names = []
+attribution = "字型：霞鶩文楷 TC © The LXGW WenKai Project Authors（OFL 1.1），https://github.com/lxgw/LxgwWenkaiTC"
+verified = "2026-11-12"
+
+[font.web]
+google_fonts = "LXGW WenKai TC"
+
+[[font]]
+id = "iansui"
+name = "芫荽"
+name_en = "Iansui"
+style = "手寫楷"
+features = ["學習用字形", "台灣教育部字形"]
+use = ["識字教材", "學習單", "低年級閱讀"]
+notes = "以 Klee One 改造，筆畫接近手寫，適合學寫字的孩子對照。"
+
+[font.source]
+kind = "github-release"
+repo = "ButTaiwan/iansui"
+tag = "v1.020"
+asset = "iansui.zip"
+member = "*.ttf"
+license_url = "https://raw.githubusercontent.com/ButTaiwan/iansui/v1.020/OFL.txt"
+
+[font.license]
+spdx = ["OFL-1.1"]
+summary = "OFL 1.1。"
+commercial = true
+modify = true
+attribution_required = false
+reserved_names = []
+attribution = "字型：芫荽 © The Iansui Project Authors（OFL 1.1），https://github.com/ButTaiwan/iansui"
+verified = "2026-11-12"
+
+[font.web]
+google_fonts = "Iansui"
+
+[[font]]
+id = "naikai"
+name = "內海字體"
+name_en = "Naikai Font"
+style = "手寫"
+features = ["五種字重", "收字約 4.7 萬"]
+use = ["標題", "親切口吻的說明文字"]
+notes = "以瀨戶字體改造，手寫感強。上游沒有 release 檔，直接釘選 repo commit。"
+
+[font.source]
+kind = "github-file"
+repo = "max32002/naikaifont"
+ref = "7baa43a6adad4a82eab6fd27c9612b316f69d7c9"
+path = "tw/NaikaiFont-Regular.ttf"
+version = "1.89"
+license_url = "https://raw.githubusercontent.com/max32002/naikaifont/7baa43a6adad4a82eab6fd27c9612b316f69d7c9/SIL_Open_Font_License_1.1.txt"
+
+[font.license]
+spdx = ["OFL-1.1"]
+summary = "OFL 1.1。"
+commercial = true
+modify = true
+attribution_required = false
+reserved_names = []
+attribution = "字型：內海字體 © max32002（OFL 1.1），https://github.com/max32002/naikaifont"
+verified = "2026-11-12"
+
+[font.web]
+google_fonts = ""
+
+# ───────────── 黑體、明體、圓體 ─────────────
+
+[[font]]
+id = "noto-sans-tc"
+name = "思源黑體 TC"
+name_en = "Noto Sans TC"
+style = "黑體"
+features = ["可變字重"]
+use = ["網頁介面", "說明文字", "表格"]
+notes = "最通用的繁中黑體。網頁直接用 Google Fonts 即可。"
+
+[font.source]
+kind = "github-file"
+repo = "google/fonts"
+ref = "c30b221beb0c1da59d563feb91ec8656a1fa972a"
+path = "ofl/notosanstc/NotoSansTC[wght].ttf"
+version = "gf-c30b221"
+license_url = "https://raw.githubusercontent.com/google/fonts/c30b221beb0c1da59d563feb91ec8656a1fa972a/ofl/notosanstc/OFL.txt"
+
+[font.license]
+spdx = ["OFL-1.1"]
+summary = "OFL 1.1。"
+commercial = true
+modify = true
+attribution_required = false
+reserved_names = ["Source"]
+attribution = "字型：Noto Sans TC © Google, Adobe（OFL 1.1）"
+verified = "2026-11-12"
+
+[font.web]
+google_fonts = "Noto Sans TC"
+
+[[font]]
+id = "noto-serif-tc"
+name = "思源宋體 TC"
+name_en = "Noto Serif TC"
+style = "明體"
+features = ["可變字重"]
+use = ["長文閱讀", "正式文件"]
+notes = "最通用的繁中明體。"
+
+[font.source]
+kind = "github-file"
+repo = "google/fonts"
+ref = "c30b221beb0c1da59d563feb91ec8656a1fa972a"
+path = "ofl/notoseriftc/NotoSerifTC[wght].ttf"
+version = "gf-c30b221"
+license_url = "https://raw.githubusercontent.com/google/fonts/c30b221beb0c1da59d563feb91ec8656a1fa972a/ofl/notoseriftc/OFL.txt"
+
+[font.license]
+spdx = ["OFL-1.1"]
+summary = "OFL 1.1。"
+commercial = true
+modify = true
+attribution_required = false
+reserved_names = ["Source"]
+attribution = "字型：Noto Serif TC © Google, Adobe（OFL 1.1）"
+verified = "2026-11-12"
+
+[font.web]
+google_fonts = "Noto Serif TC"
+
+[[font]]
+id = "genyo-min"
+name = "源樣明體"
+name_en = "GenYoMin2 TW"
+style = "明體"
+features = ["台灣字形（TW 版）", "七種字重"]
+use = ["書籍感的標題", "閱讀材料"]
+notes = "思源宋體的台灣字形改版。壓縮檔很大（約 79MB），只取 Regular。"
+
+[font.source]
+kind = "github-release"
+repo = "ButTaiwan/genyo-font"
+tag = "v2.100"
+asset = "GenYoMin2TW-otf.zip"
+member = "*-R.otf"
+license_url = "https://raw.githubusercontent.com/ButTaiwan/genyo-font/v2.100/SIL_Open_Font_License_1.1.txt"
+
+[font.license]
+spdx = ["OFL-1.1"]
+summary = "OFL 1.1（衍生自 Adobe 思源宋體，保留名稱 Source）。"
+commercial = true
+modify = true
+attribution_required = false
+reserved_names = ["Source"]
+attribution = "字型：源樣明體 © Adobe, ButTaiwan（OFL 1.1），https://github.com/ButTaiwan/genyo-font"
+verified = "2026-11-12"
+
+[font.web]
+google_fonts = ""
+
+[[font]]
+id = "genyo-gothic"
+name = "源樣黑體"
+name_en = "GenYoGothic2 TW"
+style = "黑體"
+features = ["台灣字形（TW 版）", "七種字重"]
+use = ["標題", "教材介面"]
+notes = "思源黑體的台灣字形改版。"
+
+[font.source]
+kind = "github-release"
+repo = "ButTaiwan/genyog-font"
+tag = "v2.100"
+asset = "GenYoGothic2TW-otf.zip"
+member = "*-R.otf"
+license_url = "https://raw.githubusercontent.com/ButTaiwan/genyog-font/v2.100/SIL_Open_Font_License_1.1.txt"
+
+[font.license]
+spdx = ["OFL-1.1"]
+summary = "OFL 1.1（衍生自 Adobe 思源黑體，保留名稱 Source）。"
+commercial = true
+modify = true
+attribution_required = false
+reserved_names = ["Source"]
+attribution = "字型：源樣黑體 © Adobe, ButTaiwan（OFL 1.1），https://github.com/ButTaiwan/genyog-font"
+verified = "2026-11-12"
+
+[font.web]
+google_fonts = ""
+
+[[font]]
+id = "gensen-rounded"
+name = "源泉圓體"
+name_en = "GenSenRounded2 TW"
+style = "圓體"
+features = ["台灣字形（TW 版）", "七種字重"]
+use = ["低年級標題", "海報", "按鈕文字"]
+notes = "源樣黑體程式化圓角而成。"
+
+[font.source]
+kind = "github-release"
+repo = "ButTaiwan/gensen-font"
+tag = "v2.100"
+asset = "GenSenRounded2TW-otf.zip"
+member = "*-R.otf"
+license_url = "https://raw.githubusercontent.com/ButTaiwan/gensen-font/v2.100/SIL_Open_Font_License_1.1.txt"
+
+[font.license]
+spdx = ["OFL-1.1"]
+summary = "OFL 1.1（衍生自 Adobe 思源黑體，保留名稱 Source）。"
+commercial = true
+modify = true
+attribution_required = false
+reserved_names = ["Source"]
+attribution = "字型：源泉圓體 © Adobe, ButTaiwan（OFL 1.1），https://github.com/ButTaiwan/gensen-font"
+verified = "2026-11-12"
+
+[font.web]
+google_fonts = ""
+
+[[font]]
+id = "huninn"
+name = "jf open 粉圓"
+name_en = "Huninn"
+style = "圓體"
+features = ["台灣字形"]
+use = ["低年級標題", "活潑的說明文字"]
+notes = "justfont 的開源圓體，現行版本在 justfont/Huninn（舊 repo open-huninn-font 已不是最新）。"
+
+[font.source]
+kind = "github-release"
+repo = "justfont/Huninn"
+tag = "v1.003"
+asset = "Huninn-Regular.ttf"
+license_url = "https://raw.githubusercontent.com/justfont/Huninn/v1.003/OFL.txt"
+
+[font.license]
+spdx = ["OFL-1.1"]
+summary = "OFL 1.1。"
+commercial = true
+modify = true
+attribution_required = false
+reserved_names = []
+attribution = "字型：jf open 粉圓 © The Huninn Project Authors（OFL 1.1），https://github.com/justfont/Huninn"
+verified = "2026-11-12"
+
+[font.web]
+google_fonts = "Huninn"
+
+# ───────────── 像素 ─────────────
+
+[[font]]
+id = "cubic-11"
+name = "俐方體 11 號"
+name_en = "Cubic 11"
+style = "像素"
+features = ["11×11 像素", "遊戲感"]
+use = ["遊戲化教材標題", "UDL 冒險 RPG 介面"]
+notes = "udl-learning 已在用（SpedAI-Assets/udl/fonts/cubic-11-v1.500）。"
+
+[font.source]
+kind = "github-file"
+repo = "ACh-K/Cubic-11"
+ref = "4c566f7d6cc5c05ee360fe9cff56b5da1fcafd4d"
+path = "fonts/ttf/Cubic_11.ttf"
+version = "v1.500"
+license_url = "https://raw.githubusercontent.com/ACh-K/Cubic-11/4c566f7d6cc5c05ee360fe9cff56b5da1fcafd4d/OFL.txt"
+
+[font.license]
+spdx = ["OFL-1.1"]
+summary = "OFL 1.1（基底 M+ 字型為自由授權）。保留名稱 Cubic、俐方體；再散布要附 OFL.txt。"
+commercial = true
+modify = true
+attribution_required = false
+reserved_names = ["Cubic", "俐方體"]
+attribution = "字型：俐方體 11 號（Cubic 11）© ACh-K（OFL 1.1），https://github.com/ACh-K/Cubic-11"
+verified = "2026-11-12"
+
+[font.web]
+google_fonts = ""

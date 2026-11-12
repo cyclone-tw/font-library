@@ -1,0 +1,146 @@
+{
+  "bpmf-huninn": {
+    "version": "v1.500",
+    "url": "https://github.com/ButTaiwan/bpmfvs/releases/download/v1.500/BpmfHuninn.zip",
+    "sha256": "25f144a9a8caa8dfaf68553808bd9b4a6cc2cacece906ed6c74163f643bb1d2a",
+    "archive_member": "BpmfHuninn-Regular.ttf",
+    "file": "BpmfHuninn-Regular.ttf",
+    "file_sha256": "323da7a271c80a6fd2565eaca5212b8cf9610393c398dc9ae36fff57b6b21ba2",
+    "fetched": "2026-11-12"
+  },
+  "bpmf-iansui": {
+    "version": "v1.500",
+    "url": "https://github.com/ButTaiwan/bpmfvs/releases/download/v1.500/BpmfIansui.zip",
+    "sha256": "5389a80b74104f7acc7999b0bb0533eac847706fa3154dcbccf4f9f38e7a24a6",
+    "archive_member": "BpmfIansui-Regular.ttf",
+    "file": "BpmfIansui-Regular.ttf",
+    "file_sha256": "7a2759ae4e4ef6d4b12618d1375b0a639ca2e73d7963982e5d376dbdaa41165e",
+    "fetched": "2026-11-12"
+  },
+  "bpmf-zihi-kai-std": {
+    "version": "v1.500",
+    "url": "https://github.com/ButTaiwan/bpmfvs/releases/download/v1.500/BpmfZihiKaiStd.zip",
+    "sha256": "728723239116c2a2f44fee3ef7137f3f8537a19a6f707c823d0345c5a1d234af",
+    "archive_member": "BpmfZihiKaiStd-Regular.ttf",
+    "file": "BpmfZihiKaiStd-Regular.ttf",
+    "file_sha256": "b5de180c456840edc57d07256d7d167a95306c81ab1936677c4706491a9e7d37",
+    "fetched": "2026-11-12"
+  },
+  "cubic-11": {
+    "version": "v1.500",
+    "url": "https://raw.githubusercontent.com/ACh-K/Cubic-11/4c566f7d6cc5c05ee360fe9cff56b5da1fcafd4d/fonts/ttf/Cubic_11.ttf",
+    "sha256": "0193f5f033612496df6b45ee92ac3b335bc6a5a24ff95da55ca87b33e57dcf62",
+    "archive_member": null,
+    "file": "Cubic_11.ttf",
+    "file_sha256": "0193f5f033612496df6b45ee92ac3b335bc6a5a24ff95da55ca87b33e57dcf62",
+    "fetched": "2026-11-12"
+  },
+  "gensen-rounded": {
+    "version": "v2.100",
+    "url": "https://github.com/ButTaiwan/gensen-font/releases/download/v2.100/GenSenRounded2TW-otf.zip",
+    "sha256": "c5a18c0661c0b26effe5503431f2fee176137f6451be3ae37b9787c6179cf325",
+    "archive_member": "GenSenRounded2TW-R.otf",
+    "file": "GenSenRounded2TW-R.otf",
+    "file_sha256": "092285878f1d9441c790e5d6a98e806bd508602ad0a8a55511b6fb0a71a25fed",
+    "fetched": "2026-11-12"
+  },
+  "genyo-gothic": {
+    "version": "v2.100",
+    "url": "https://github.com/ButTaiwan/genyog-font/releases/download/v2.100/GenYoGothic2TW-otf.zip",
+    "sha256": "616be26e3448b1396b342533d046d8bb0d5b1801d80b5a8ee882811bdc625d7c",
+    "archive_member": "GenYoGothic2TW-R.otf",
+    "file": "GenYoGothic2TW-R.otf",
+    "file_sha256": "425f22fe1e7cf51d6afb5a6a0608f6c6e45b69a71ca3a1f73f13fedc5253f3c3",
+    "fetched": "2026-11-12"
+  },
+  "genyo-min": {
+    "version": "v2.100",
+    "url": "https://github.com/ButTaiwan/genyo-font/releases/download/v2.100/GenYoMin2TW-otf.zip",
+    "sha256": "64ed21a2ef3b42171bdded55a705b32cc105740436c9f61c3d6efec95a769718",
+    "archive_member": "GenYoMin2TW-R.otf",
+    "file": "GenYoMin2TW-R.otf",
+    "file_sha256": "d5fb9f21c533263e727268fadb3155cd7255468d48d666aed1b886a80b4b8c92",
+    "fetched": "2026-11-12"
+  },
+  "huninn": {
+    "version": "v1.003",
+    "url": "https://github.com/justfont/Huninn/releases/download/v1.003/Huninn-Regular.ttf",
+    "sha256": "6f2b79de0ee013f260fc88b4c668969e34fdfe87b7daeecaeeb5ad5a97eb9883",
+    "archive_member": null,
+    "file": "Huninn-Regular.ttf",
+    "file_sha256": "6f2b79de0ee013f260fc88b4c668969e34fdfe87b7daeecaeeb5ad5a97eb9883",
+    "fetched": "2026-11-12"
+  },
+  "iansui": {
+    "version": "v1.020",
+    "url": "https://github.com/ButTaiwan/iansui/releases/download/v1.020/iansui.zip",
+    "sha256": "28d58aef9b7a21c137945a4fd14138d6284a8573c0c1b123f6e5b708423348a6",
+    "archive_member": "Iansui-Regular.ttf",
+    "file": "Iansui-Regular.ttf",
+    "file_sha256": "7f1aa62e9dcbf40d0ce41a5d3f1e5ea602e66c295778ac6fefb6b84d8ed08bd5",
+    "fetched": "2026-11-12"
+  },
+  "lxgw-wenkai-tc": {
+    "version": "v1.530",
+    "url": "https://github.com/lxgw/LxgwWenkaiTC/releases/download/v1.530/LXGWWenKaiTC-Regular.ttf",
+    "sha256": "6662480a3f95b4a90c80b189c679617a48adce3a505118a6af63ce5a482b83fa",
+    "archive_member": null,
+    "file": "LXGWWenKaiTC-Regular.ttf",
+    "file_sha256": "6662480a3f95b4a90c80b189c679617a48adce3a505118a6af63ce5a482b83fa",
+    "fetched": "2026-11-12"
+  },
+  "naikai": {
+    "version": "1.89",
+    "url": "https://raw.githubusercontent.com/max32002/naikaifont/7baa43a6adad4a82eab6fd27c9612b316f69d7c9/tw/NaikaiFont-Regular.ttf",
+    "sha256": "d3320b822131540d5e3cc9737f7b458aeb1c0ca76fe89aeaa1b76001f54e503e",
+    "archive_member": null,
+    "file": "NaikaiFont-Regular.ttf",
+    "file_sha256": "d3320b822131540d5e3cc9737f7b458aeb1c0ca76fe89aeaa1b76001f54e503e",
+    "fetched": "2026-11-12"
+  },
+  "noto-sans-tc": {
+    "version": "gf-c30b221",
+    "url": "https://raw.githubusercontent.com/google/fonts/c30b221beb0c1da59d563feb91ec8656a1fa972a/ofl/notosanstc/NotoSansTC%5Bwght%5D.ttf",
+    "sha256": "864727d210d54f2537bbe23b3a839436c3992af72de9322af5270897246bd44f",
+    "archive_member": null,
+    "file": "NotoSansTC[wght].ttf",
+    "file_sha256": "864727d210d54f2537bbe23b3a839436c3992af72de9322af5270897246bd44f",
+    "fetched": "2026-11-12"
+  },
+  "noto-serif-tc": {
+    "version": "gf-c30b221",
+    "url": "https://raw.githubusercontent.com/google/fonts/c30b221beb0c1da59d563feb91ec8656a1fa972a/ofl/notoseriftc/NotoSerifTC%5Bwght%5D.ttf",
+    "sha256": "0077e18f57c6908f4a000969880940bdb0dad057c0e8d98b49dc364c3d1b09c6",
+    "archive_member": null,
+    "file": "NotoSerifTC[wght].ttf",
+    "file_sha256": "0077e18f57c6908f4a000969880940bdb0dad057c0e8d98b49dc364c3d1b09c6",
+    "fetched": "2026-11-12"
+  },
+  "tw-kai": {
+    "version": "20261028",
+    "url": "https://data.cns11643.gov.tw/opendata/Fonts_Kai.zip",
+    "sha256": "c602f1518f496252184ffd38f3cc8dc0a2d50fef4815e9340edda71dd501920f",
+    "archive_member": "TW-Kai.ttf",
+    "file": "TW-Kai.ttf",
+    "file_sha256": "9b502e5197d52a946552bef100b9a3d601befcf896fb2b64f28f862314bea337",
+    "fetched": "2026-11-12"
+  },
+  "tw-pinyin-kai": {
+    "version": "v1.000",
+    "url": "https://github.com/FW1201/tw-pinyin-font/releases/download/v1.000/TaiwanPinyinKai-Regular.ttf",
+    "sha256": "cb473579f7674599c9ebc240e929580e1ef3dc7beab21dcd274197a5dddc0e74",
+    "archive_member": null,
+    "file": "TaiwanPinyinKai-Regular.ttf",
+    "file_sha256": "cb473579f7674599c9ebc240e929580e1ef3dc7beab21dcd274197a5dddc0e74",
+    "fetched": "2026-11-12"
+  },
+  "tw-sung": {
+    "version": "20261028",
+    "url": "https://data.cns11643.gov.tw/opendata/Fonts_Sung.zip",
+    "sha256": "2ec825cb85314782c46a6503fcbd1de4faf14f1a328bfa79416b2ed4e0f3c235",
+    "archive_member": "TW-Sung.ttf",
+    "file": "TW-Sung.ttf",
+    "file_sha256": "7814b36b52b51e9a89608dea2fc74de0d4a18a71f294232235395a0d853fc555",
+    "fetched": "2026-11-12"
+  }
+}
