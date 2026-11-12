@@ -1,223 +1,571 @@
-<title>教學字型庫</title>
-<meta name="claude:viewport-fit-sides" content="cover">
-<meta name="description" content="台灣教學網頁與學習單可用的開源字型：樣張、授權、署名文字一次看。">
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#1b2559">
+<title>教學字型庫｜奧瑞恩小學堂</title>
+<meta name="description" content="台灣教學網頁與學習單可以使用的開源字型：樣張、授權白話說明、可以直接貼上的署名文字。">
+<meta property="og:type" content="website">
+<meta property="og:title" content="教學字型庫｜奧瑞恩小學堂">
+<meta property="og:description" content="台灣教學網頁與學習單可以使用的開源字型：樣張、授權白話說明、署名文字一次看。">
+<meta property="og:url" content="https://cyclone-tw.github.io/font-library/">
+<meta property="og:image" content="https://cyclone-tw.github.io/font-library/assets/aurelion/icon.png">
+<link rel="icon" href="assets/aurelion/icon.png">
+<link rel="apple-touch-icon" href="assets/aurelion/icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=LXGW+WenKai+TC:wght@400;700&family=Noto+Sans+TC:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Huninn&family=LXGW+WenKai+TC:wght@400;700&family=Noto+Sans+TC:wght@400;500;700&display=swap">
 {{GF_LINKS}}
 <style>
-/* 版面概念：作文稿紙（淺色）／教室黑板（深色）；每張字型卡左側放一格田字格寫大字 */
+/* 奧瑞恩小學堂・小龍書房主題（沿用 sticker.cyclonetw.dev）：
+   夜晚書房的深藍、金色書名與書籤、羊皮紙卡片。電腦版滿版，左側固定篩選欄。 */
 :root {
-  --paper: #f6f8f4;
-  --sheet: #ffffff;
-  --ink: #1c2420;
-  --ink-soft: #55625b;
-  --rule: #cfdcd2;
-  --grid: #2f7a58;
-  --accent: #2f7a58;
-  --accent-ink: #ffffff;
-  --redpen: #b8322a;
-  --ok: #2f7a58;
-  --warn: #9a6400;
-  --chip: #e6efe8;
-  --code: #eef3ef;
-  --display: "LXGW WenKai TC", "Kaiti TC", "BiauKai", serif;
-  --body: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+  color-scheme: light;
+  --night: #10173f;
+  --navy: #1b2559;
+  --royal: #2f4fa8;
+  --blue: #3a5cb8;
+  --gold: #e2ae45;
+  --gold-2: #f6cf6a;
+  --gold-soft: #fff6dc;
+  --parchment: #fdf6e4;
+  --page: #fffdf7;
+  --line: #efdcb2;
+  --ink: #1f2547;
+  --muted: #5a5470;
+  --ok: #1d7f47;
+  --ok-soft: #e4f4ea;
+  --bad: #b93a12;
+  --bad-soft: #fde8e0;
+  --warn: #8a5a00;
+  --warn-soft: #fff1cc;
+  --kai: "LXGW WenKai TC", "Kaiti TC", "BiauKai", serif;
+  --round: "Huninn", "Noto Sans TC", "PingFang TC", sans-serif;
+  --body: "Noto Sans TC", -apple-system, "PingFang TC", "Microsoft JhengHei", sans-serif;
   --mono: ui-monospace, "SF Mono", Menlo, monospace;
   --fallback: "PingFang TC", "Microsoft JhengHei", sans-serif;
-}
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --paper: #18271f; --sheet: #1f3128; --ink: #eef2ea; --ink-soft: #b4c2b8; --rule: #35503f;
-    --grid: #e9d27c; --accent: #e9d27c; --accent-ink: #18271f; --redpen: #f2958a; --ok: #9fdcb7;
-    --warn: #f0c46a; --chip: #2a4033; --code: #24382d; color-scheme: dark;
-  }
-}
-:root[data-theme="dark"] {
-  --paper: #18271f; --sheet: #1f3128; --ink: #eef2ea; --ink-soft: #b4c2b8; --rule: #35503f;
-  --grid: #e9d27c; --accent: #e9d27c; --accent-ink: #18271f; --redpen: #f2958a; --ok: #9fdcb7;
-  --warn: #f0c46a; --chip: #2a4033; --code: #24382d; color-scheme: dark;
+  --top-h: 76px;
+  --gutter: clamp(16px, 2.6vw, 40px);
 }
 {{FONT_FACES}}
 
 * { box-sizing: border-box; }
+[hidden] { display: none !important; }
+html { scroll-behavior: smooth; scroll-padding-top: calc(var(--top-h) + 16px); -webkit-text-size-adjust: 100%; }
 body {
-  background: var(--paper);
-  background-image: linear-gradient(var(--rule) 1px, transparent 1px);
-  background-size: 100% 2.25rem;
-  background-attachment: local;
+  margin: 0;
   color: var(--ink);
   font: 16px/1.7 var(--body);
+  overflow-wrap: anywhere;
+  background:
+    radial-gradient(1400px 520px at 50% -160px, #e9e2ff66, transparent 70%),
+    radial-gradient(circle at 12% 30%, #f6cf6a1c 0 2px, transparent 3px) 0 0 / 46px 46px,
+    var(--parchment);
 }
-.wrap {
-  max-width: 1180px; margin: 0 auto;
-  padding-block: 2.5rem 4rem;
-  padding-left: max(16px, env(safe-area-inset-left, 0px));
-  padding-right: max(16px, env(safe-area-inset-right, 0px));
-  display: grid; gap: 2.5rem;
-}
-h1, h2, h3 { font-family: var(--display); font-weight: 700; text-wrap: balance; margin: 0; }
-h1 { font-size: clamp(2.2rem, 6vw, 3.4rem); line-height: 1.15; letter-spacing: .04em; }
-h2 { font-size: 1.6rem; }
-h3 { font-size: 1.45rem; line-height: 1.2; }
+img { max-width: 100%; }
+h1, h2, h3 { font-family: var(--kai); font-weight: 700; line-height: 1.25; margin: 0; text-wrap: balance; }
+h2 { font-size: clamp(1.5rem, 2.2vw, 1.9rem); color: var(--navy); }
+h3 { font-size: 1.35rem; }
 p { margin: 0; }
-a { color: var(--accent); }
-code { font-family: var(--mono); font-size: .85em; background: var(--code); padding: .1em .35em; border-radius: 4px; }
-.muted { color: var(--ink-soft); }
+a { color: var(--royal); }
+code { font-family: var(--mono); font-size: .85em; background: #f3ead2; padding: .1em .35em; border-radius: 5px; }
+.muted { color: var(--muted); }
+:focus-visible { outline: 3px solid var(--blue); outline-offset: 2px; }
 
-.hero { display: grid; gap: 1rem; max-width: 46rem; }
-.hero .lede { font-size: 1.1rem; color: var(--ink-soft); }
-.hero .stamp { display: inline-flex; gap: .75rem; flex-wrap: wrap; font-size: .9rem; color: var(--ink-soft); }
-.hero .stamp b { color: var(--ink); font-variant-numeric: tabular-nums; }
+/* ---- 頁首：夜空與星點 ---- */
+.top {
+  position: sticky; top: 0; z-index: 30;
+  color: #fff;
+  background:
+    radial-gradient(circle at 20% 30%, #fff8 0 1px, transparent 2px) 0 0 / 120px 60px,
+    radial-gradient(circle at 70% 70%, #f6cf6a99 0 1px, transparent 2px) 0 0 / 90px 50px,
+    linear-gradient(180deg, var(--night), var(--navy));
+  box-shadow: 0 3px 0 var(--gold), 0 8px 24px #10173f40;
+  padding-top: env(safe-area-inset-top);
+}
+.top-in { height: var(--top-h); padding: 0 var(--gutter); display: flex; align-items: center; gap: 20px; }
+.brand { display: flex; align-items: center; gap: 12px; color: #fff; text-decoration: none; flex: 0 0 auto; }
+.brand img { width: 54px; height: 54px; border-radius: 50%; background: radial-gradient(circle at 50% 40%, #3b4ea8, #1b2559 70%); border: 3px solid var(--gold); box-shadow: 0 4px 10px #0005; }
+.brand span { font-family: var(--kai); font-weight: 700; font-size: 1.5rem; line-height: 1.15; color: var(--gold-2); text-shadow: 0 2px 0 #0006; letter-spacing: .04em; }
+.brand small { display: block; font-family: var(--round); font-weight: 400; font-size: .8rem; color: #e6e9ff; letter-spacing: .1em; text-shadow: none; }
+.nav { display: flex; gap: 4px; margin-left: auto; overflow-x: auto; scrollbar-width: none; }
+.nav a { white-space: nowrap; color: #dfe4ff; text-decoration: none; font-family: var(--round); padding: 8px 14px; border-radius: 12px; }
+.nav a:hover { background: #ffffff1a; color: #fff; box-shadow: inset 0 0 0 1px #f6cf6a66; }
+.nav a.gh { color: var(--gold-2); }
 
-.guide { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; }
-.guide div { background: var(--sheet); border: 1px solid var(--rule); border-radius: 10px; padding: 1rem 1.1rem; display: grid; gap: .3rem; min-width: 0; }
-.guide dt { font-family: var(--display); font-size: 1.15rem; font-weight: 700; }
-.guide dd { margin: 0; color: var(--ink-soft); }
-.guide dd a { font-weight: 500; }
+/* ---- 滿版骨架：左欄篩選＋右側內容 ---- */
+.shell { display: grid; grid-template-columns: 272px minmax(0, 1fr); gap: 28px; padding: 24px var(--gutter) 56px; }
+.side { position: sticky; top: calc(var(--top-h) + 18px); align-self: start; max-height: calc(100vh - var(--top-h) - 36px); overflow-y: auto; display: grid; gap: 16px; padding-bottom: 8px; }
+.side-box { background: var(--page); border: 2px solid var(--line); border-top: 6px solid var(--gold); border-radius: 18px; padding: 14px 16px 16px; box-shadow: 0 5px 0 var(--line); display: grid; gap: 10px; }
+.side-box h2 { font-size: 1.1rem; }
+.side-label { font-size: .8rem; color: var(--muted); letter-spacing: .08em; margin-top: 4px; }
+.filters { display: flex; flex-wrap: wrap; gap: 6px; }
+.filters button {
+  font: inherit; font-family: var(--round); font-size: .92rem; cursor: pointer;
+  min-height: 38px; padding: 4px 14px; border-radius: 999px;
+  border: 2px solid var(--line); background: #fff; color: var(--ink);
+}
+.filters button[aria-pressed="true"] { background: var(--royal); border-color: var(--navy); color: #fff; box-shadow: inset 0 0 0 1px #f6cf6a88; }
+.count { font-family: var(--round); color: var(--navy); font-variant-numeric: tabular-nums; }
+.legend { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; font-size: .88rem; }
+.legend li { display: grid; gap: 2px; }
+.legend b { font-family: var(--mono); font-size: .82rem; color: var(--navy); }
+.jump { list-style: none; margin: 0; padding: 0; display: grid; gap: 2px; }
+.jump a { display: block; padding: 4px 8px; border-radius: 8px; text-decoration: none; color: var(--ink); }
+.jump a:hover { background: var(--gold-soft); }
+main { min-width: 0; display: grid; gap: 44px; align-content: start; }
+.section { display: grid; gap: 18px; min-width: 0; }
+.section-head { display: flex; align-items: end; gap: 16px; flex-wrap: wrap; }
+.section-head p { color: var(--muted); }
 
-.filters { display: flex; flex-wrap: wrap; gap: .5rem; align-items: center; position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--paper); padding-block: .75rem; border-bottom: 1px solid var(--rule); }
-.filters .label { font-size: .85rem; color: var(--ink-soft); margin-right: .25rem; }
-.filters button { font: inherit; font-size: .92rem; border: 1px solid var(--rule); background: var(--sheet); color: var(--ink); border-radius: 999px; padding: .3rem .9rem; cursor: pointer; }
-.filters button[aria-pressed="true"] { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
-.filters button:focus-visible, .copy:focus-visible { outline: 3px solid var(--grid); outline-offset: 2px; }
-.filters .sep { width: 1px; height: 1.5rem; background: var(--rule); margin-inline: .25rem; }
-.filters .count { margin-left: auto; font-size: .9rem; color: var(--ink-soft); font-variant-numeric: tabular-nums; }
+/* ---- 主視覺：夜晚書房 ---- */
+.hero {
+  position: relative; overflow: hidden; isolation: isolate;
+  display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: end; gap: 12px;
+  min-height: 320px; padding: 30px 32px 0 78px;
+  border-radius: 26px; border: 3px solid var(--gold);
+  color: #fff;
+  background:
+    radial-gradient(560px 240px at 82% 100%, #3a5cb880, transparent 70%),
+    radial-gradient(circle at 30% 20%, #fff6 0 1px, transparent 2px) 0 0 / 70px 50px,
+    radial-gradient(circle at 70% 60%, #f6cf6a77 0 1px, transparent 2px) 0 0 / 95px 64px,
+    linear-gradient(170deg, #1d2a6e, var(--night) 70%);
+  box-shadow: 0 10px 0 #c99a3a, 0 18px 40px #10173f55;
+}
+.hero::after {
+  content: ""; position: absolute; z-index: -1; right: 4%; bottom: -40px; width: 340px; height: 80px;
+  border-radius: 50%; border: 3px solid #f6cf6a99; box-shadow: 0 0 24px #f6cf6a66, inset 0 0 18px #f6cf6a55;
+}
+.bookmark {
+  position: absolute; top: 0; left: 24px; writing-mode: vertical-rl;
+  padding: 10px 6px 18px; background: var(--gold); color: var(--night);
+  font-family: var(--kai); font-weight: 700; font-size: .95rem; letter-spacing: .2em;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 88%, 0 100%);
+}
+.hero-text { align-self: center; padding-bottom: 30px; display: grid; gap: 12px; max-width: 54rem; }
+.coach-name { justify-self: start; padding: 0 12px; border-radius: 99px; background: var(--gold); color: var(--night); font-family: var(--round); font-size: .82rem; letter-spacing: .08em; }
+.hero h1 { font-size: clamp(2.2rem, 4.4vw, 3.6rem); color: var(--gold-2); text-shadow: 0 3px 0 #0007; letter-spacing: .06em; }
+.hero .lede { font-size: 1.12rem; color: #eef0ff; max-width: 46rem; }
+.stats { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 6px; }
+.stats span { background: #ffffff14; border: 1px solid #f6cf6a66; border-radius: 14px; padding: 6px 14px; color: #e6e9ff; font-size: .9rem; }
+.stats b { display: block; font-family: var(--round); font-size: 1.5rem; line-height: 1.2; color: var(--gold-2); font-variant-numeric: tabular-nums; font-weight: 400; }
+.hero-dragon { width: 250px; height: 250px; margin-bottom: -8px; filter: drop-shadow(0 10px 14px #0008); }
+@media (prefers-reduced-motion: no-preference) {
+  .hero-dragon { animation: float 4s ease-in-out infinite; }
+  @keyframes float { 50% { transform: translateY(-8px); } }
+}
 
-.cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 340px), 1fr)); gap: 1.25rem; }
-.card { background: var(--sheet); border: 1px solid var(--rule); border-radius: 12px; padding: 1.25rem; display: grid; gap: .8rem; align-content: start; min-width: 0; }
-.card header { display: grid; gap: .2rem; }
-.card .en { font-size: .85rem; color: var(--ink-soft); letter-spacing: .02em; }
-.chips { display: flex; flex-wrap: wrap; gap: .3rem; margin-top: .35rem; }
-.chip { font-size: .78rem; background: var(--chip); border-radius: 4px; padding: .05rem .45rem; }
-.chip.style { background: var(--accent); color: var(--accent-ink); }
+/* ---- 小講師對話 ---- */
+.coach { display: flex; align-items: center; gap: 10px; }
+.coach img { width: 128px; height: 128px; flex: 0 0 auto; filter: drop-shadow(0 4px 6px #1b255922); }
+.say { position: relative; flex: 1; background: var(--page); border: 2px solid var(--line); border-radius: 20px; padding: 14px 18px; box-shadow: 0 4px 0 var(--line); display: grid; gap: 6px; }
+.say::before { content: ""; position: absolute; left: -10px; top: 42%; width: 16px; height: 16px; background: var(--page); border-left: 2px solid var(--line); border-bottom: 2px solid var(--line); transform: rotate(45deg); }
+.say .coach-name { background: var(--navy); color: var(--gold-2); }
+.say p { font-size: 1.05rem; }
+.say ol { margin: 0; padding-left: 1.4rem; display: grid; gap: 4px; }
 
-.specimen { display: grid; grid-template-columns: 5.5rem 1fr; gap: 1rem; align-items: center; padding-block: .5rem; border-block: 1px dashed var(--rule); min-width: 0; }
-.specimen.none { grid-template-columns: 1fr; color: var(--redpen); font-size: .95rem; padding-block: 1rem; }
-.grid-cell { width: 5.5rem; aspect-ratio: 1; max-width: 100%; position: relative; border: 2px solid var(--grid); display: grid; place-items: center; }
-.grid-cell::before, .grid-cell::after { content: ""; position: absolute; border: 0 dashed var(--grid); opacity: .55; }
+/* ---- 怎麼挑 ---- */
+.guide { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 380px), 1fr)); gap: 16px; }
+.guide a.pick {
+  display: grid; grid-template-columns: 76px 1fr; gap: 10px; align-items: center;
+  background: var(--page); border: 2px solid var(--line); border-radius: 18px; padding: 10px 16px 10px 8px;
+  box-shadow: 0 5px 0 var(--line); color: var(--ink); text-decoration: none;
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+.guide a.pick:hover { transform: translateY(-3px); box-shadow: 0 8px 0 var(--line); }
+.guide img { width: 76px; height: 76px; }
+.guide b { display: block; font-family: var(--kai); font-size: 1.15rem; color: var(--navy); }
+.guide small { display: block; color: var(--muted); font-size: .9rem; line-height: 1.5; }
+
+/* ---- 字型卡 ---- */
+.cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 380px), 1fr)); gap: 22px; }
+.card {
+  background: var(--page); border: 2px solid var(--line); border-top: 6px solid var(--gold);
+  border-radius: 18px; padding: 18px 20px 20px; box-shadow: 0 5px 0 var(--line);
+  display: grid; gap: 12px; align-content: start; min-width: 0;
+}
+.card header { display: grid; gap: 2px; }
+.card h3 { color: var(--navy); }
+.card .en { font-size: .85rem; color: var(--muted); }
+.chips { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 6px; }
+.chip { font-size: .78rem; background: var(--gold-soft); border: 1px solid var(--line); border-radius: 99px; padding: 0 9px; }
+.chip.style { background: var(--navy); border-color: var(--navy); color: var(--gold-2); }
+.specimen { display: grid; grid-template-columns: 5.5rem minmax(0, 1fr); gap: 16px; align-items: center; padding: 12px 0; border-block: 2px dashed var(--line); }
+.specimen.none { grid-template-columns: 1fr; color: var(--bad); font-size: .95rem; }
+.grid-cell { width: 5.5rem; aspect-ratio: 1; position: relative; border: 2px solid var(--bad); background: #fff; display: grid; place-items: center; }
+.grid-cell::before, .grid-cell::after { content: ""; position: absolute; border: 0 dashed var(--bad); opacity: .45; }
 .grid-cell::before { left: 50%; top: 0; bottom: 0; border-left-width: 1px; }
 .grid-cell::after { top: 50%; left: 0; right: 0; border-top-width: 1px; }
 .grid-cell span { position: relative; font-size: 3.6rem; line-height: 1; }
-.sample { font-size: 1.55rem; line-height: 1.6; overflow-wrap: anywhere; min-width: 0; }
-.ivs { display: grid; gap: .1rem; }
+.sample { font-size: 1.55rem; line-height: 1.6; min-width: 0; }
+.ivs { display: grid; gap: 0; }
 .ivs span { font-size: 1.6rem; }
-.ivs small { color: var(--ink-soft); font-size: .8rem; }
+.ivs small { color: var(--muted); font-size: .8rem; }
 
-.perms { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: .4rem; }
-.perms li { font-size: .82rem; font-weight: 500; border-radius: 4px; padding: .1rem .5rem; border: 1px solid currentColor; }
-.perms .yes { color: var(--ok); }
-.perms .no { color: var(--redpen); }
-.perms .warn { color: var(--warn); }
+.can { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+.can li { display: grid; grid-template-columns: 1.6rem 9.6rem minmax(0, 1fr); gap: 6px; align-items: baseline; font-size: .9rem; padding: 4px 8px; border-radius: 10px; }
+.can li i { font-style: normal; font-weight: 700; text-align: center; }
+.can li b { font-weight: 500; }
+.can li span { color: var(--muted); }
+.can .yes { background: var(--ok-soft); } .can .yes i { color: var(--ok); }
+.can .no { background: var(--bad-soft); } .can .no i { color: var(--bad); }
+.can .warn { background: var(--warn-soft); } .can .warn i { color: var(--warn); }
 .lic { font-size: .9rem; }
-.lic strong { font-family: var(--mono); font-size: .85rem; }
-.rfn { font-size: .88rem; color: var(--warn); }
-.notes, .use { font-size: .92rem; color: var(--ink-soft); }
-.attr { display: flex; gap: .5rem; align-items: flex-start; min-width: 0; }
-.attr code { flex: 1; min-width: 0; display: block; padding: .5rem .6rem; font-size: .78rem; line-height: 1.5; overflow-wrap: anywhere; }
-.copy { font: inherit; font-size: .82rem; white-space: nowrap; border: 1px solid var(--accent); color: var(--accent); background: transparent; border-radius: 6px; padding: .35rem .6rem; cursor: pointer; }
-.copy.done { background: var(--accent); color: var(--accent-ink); }
-.meta { list-style: none; margin: 0; padding: 0; font-size: .82rem; display: grid; gap: .15rem; color: var(--ink-soft); }
+.lic strong { font-family: var(--mono); font-size: .82rem; color: var(--navy); background: var(--gold-soft); border: 1px solid var(--line); border-radius: 6px; padding: 0 6px; margin-right: 4px; }
+.notes, .use { font-size: .92rem; color: var(--muted); }
+.attr { display: flex; gap: 8px; align-items: flex-start; min-width: 0; }
+.attr code { flex: 1; min-width: 0; display: block; padding: 8px 10px; font-size: .78rem; line-height: 1.5; background: #f6eed8; }
+.copy { font: inherit; font-family: var(--round); font-size: .85rem; white-space: nowrap; cursor: pointer; min-height: 38px; border-radius: 12px; padding: 4px 12px; border: 2px solid var(--royal); color: var(--royal); background: #fff; box-shadow: 0 3px 0 #c9d2f0; }
+.copy.done { background: var(--royal); color: #fff; }
+.meta { list-style: none; margin: 0; padding: 0; font-size: .84rem; display: flex; flex-wrap: wrap; gap: 4px 14px; color: var(--muted); }
 
-.section { display: grid; gap: 1rem; }
-.prose { max-width: 46rem; display: grid; gap: .8rem; }
-.prose ul { margin: 0; padding-left: 1.2rem; display: grid; gap: .4rem; }
-.table-wrap { overflow-x: auto; border: 1px solid var(--rule); border-radius: 10px; background: var(--sheet); }
-table { border-collapse: collapse; width: 100%; min-width: 640px; font-size: .92rem; }
-th, td { text-align: left; padding: .6rem .8rem; border-bottom: 1px solid var(--rule); vertical-align: top; }
-th { font-weight: 700; font-size: .85rem; color: var(--ink-soft); letter-spacing: .04em; }
-tr:last-child td { border-bottom: 0; }
-pre { margin: 0; overflow-x: auto; background: var(--code); border-radius: 10px; padding: 1rem; font: .85rem/1.6 var(--mono); }
-footer { font-size: .85rem; color: var(--ink-soft); border-top: 1px solid var(--rule); padding-top: 1rem; }
-@media (prefers-reduced-motion: no-preference) { .card { transition: border-color .15s; } .card:hover { border-color: var(--accent); } }
+/* ---- 授權說明 ---- */
+.table-wrap { overflow-x: auto; background: var(--page); border: 2px solid var(--line); border-radius: 18px; box-shadow: 0 5px 0 var(--line); }
+table { border-collapse: collapse; width: 100%; min-width: 760px; font-size: .93rem; }
+th, td { text-align: left; padding: 10px 14px; border-bottom: 1px solid var(--line); vertical-align: top; }
+thead th { background: var(--navy); color: var(--gold-2); font-family: var(--round); font-weight: 400; letter-spacing: .04em; position: sticky; top: 0; }
+thead th small { display: block; color: #dfe4ff; font-size: .78rem; }
+tbody th { font-weight: 500; width: 26%; }
+tr:last-child td, tr:last-child th { border-bottom: 0; }
+.y { color: var(--ok); font-weight: 700; }
+.n { color: var(--bad); font-weight: 700; }
+.c { color: var(--warn); font-weight: 700; }
+td .y, td .n, td .c { margin-right: 4px; }
+.lics { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 340px), 1fr)); gap: 18px; }
+.lic-card { background: var(--page); border: 2px solid var(--line); border-radius: 18px; padding: 16px 18px; box-shadow: 0 5px 0 var(--line); display: grid; gap: 8px; align-content: start; }
+.lic-card h3 { font-size: 1.2rem; color: var(--navy); }
+.lic-card .who { font-size: .85rem; color: var(--muted); }
+.lic-card dl { margin: 0; display: grid; gap: 6px; font-size: .92rem; }
+.lic-card dt { font-weight: 700; }
+.lic-card dd { margin: 0 0 4px; }
+.twocol { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr)); gap: 18px; }
+.note { background: var(--page); border: 2px solid var(--line); border-left: 6px solid var(--gold); border-radius: 14px; padding: 14px 18px; display: grid; gap: 8px; }
+.note h3 { font-size: 1.15rem; color: var(--navy); }
+.note ul { margin: 0; padding-left: 1.3rem; display: grid; gap: 4px; }
+.note.warn { border-left-color: var(--bad); }
+.fine { font-size: .88rem; color: var(--muted); }
+.prose { display: grid; gap: 10px; max-width: 60rem; }
+.prose ul { margin: 0; padding-left: 1.3rem; display: grid; gap: 6px; }
+pre { margin: 0; overflow-x: auto; background: var(--night); color: #e6e9ff; border: 2px solid var(--gold); border-radius: 16px; padding: 16px 18px; font: .86rem/1.65 var(--mono); }
+pre .cm { color: var(--gold-2); }
+
+/* ---- 頁尾：夜空書房＋個人 IP ---- */
+.foot {
+  padding: 26px var(--gutter) calc(30px + env(safe-area-inset-bottom)); text-align: center; color: #c9d2f5; font-size: .88rem;
+  border-top: 3px solid var(--gold);
+  background:
+    radial-gradient(circle at 20% 30%, #fff7 0 1px, transparent 2px) 0 0 / 110px 70px,
+    radial-gradient(circle at 60% 60%, #f6cf6a88 0 1px, transparent 2px) 0 0 / 80px 60px,
+    linear-gradient(180deg, var(--navy), var(--night));
+  display: grid; gap: 10px;
+}
+.foot .ip { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 8px 18px; }
+.foot .ip-who { display: inline-flex; align-items: center; gap: 10px; color: #fff; text-decoration: none; text-align: left; }
+.foot .ip-who img { width: 40px; height: 40px; border-radius: 50%; border: 2px solid var(--gold); }
+.foot .ip-who b { font-size: 1.02rem; font-weight: 500; }
+.foot .ip-who small { color: #c9d2f5; font-size: 1.02rem; }
+.foot .ip-link { color: var(--gold-2); font-weight: 700; }
+
+/* ---- 窄螢幕：左欄收成頁首下的一條篩選列 ---- */
+@media (max-width: 1100px) {
+  :root { --top-h: 64px; }
+  .shell { grid-template-columns: minmax(0, 1fr); gap: 20px; padding-top: 0; }
+  .side { position: sticky; top: var(--top-h); z-index: 20; max-height: none; overflow: visible; margin: 0 calc(-1 * var(--gutter)); padding: 10px var(--gutter); background: var(--parchment); border-bottom: 2px solid var(--line); gap: 0; }
+  .side-box { background: none; border: 0; box-shadow: none; padding: 0; gap: 6px; }
+  .side-box.filter-box h2, .side-box.filter-box .side-label, .side-box.extra { display: none; }
+  .filters { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; padding-bottom: 2px; }
+  .filters button { flex: 0 0 auto; min-height: 36px; padding: 2px 12px; }
+  .count { font-size: .85rem; }
+  .brand img { width: 46px; height: 46px; }
+  .brand span { font-size: 1.25rem; }
+}
+@media (max-width: 720px) {
+  .nav a:not(.gh) { display: none; }
+  .hero { grid-template-columns: minmax(0, 1fr); padding: 22px 18px 0 58px; }
+  .bookmark { left: 14px; }
+  .hero-dragon { width: 170px; height: 170px; justify-self: end; margin-top: -24px; }
+  .hero-text { padding-bottom: 0; }
+  .hero h1 { font-size: 2.1rem; }
+  .stats span { padding: 4px 10px; font-size: .8rem; }
+  .stats b { font-size: 1.15rem; }
+  .hero::after { width: 220px; height: 52px; bottom: -26px; }
+  .coach { align-items: flex-start; }
+  .coach img { width: 84px; height: 84px; }
+  .say::before { top: 30px; }
+  .can li { grid-template-columns: 1.4rem minmax(0, 1fr); }
+  .can li span { grid-column: 2; }
+}
+@media (max-width: 420px) { .brand span { font-size: 1.05rem; } .brand small { font-size: .7rem; } }
+@media print { .top, .side, .copy, .foot { display: none; } .shell { display: block; } }
 </style>
+</head>
+<body>
+<header class="top">
+  <div class="top-in">
+    <a class="brand" href="./" aria-label="教學字型庫首頁">
+      <img src="assets/aurelion/icon.png" alt="" width="54" height="54">
+      <span><small>奧瑞恩小學堂</small>教學字型庫</span>
+    </a>
+    <nav class="nav" aria-label="頁面段落">
+      <a href="#pick">怎麼挑</a>
+      <a href="#fonts">全部字型</a>
+      <a href="#license">授權說明</a>
+      <a href="#how">怎麼用</a>
+      <a class="gh" href="https://github.com/cyclone-tw/font-library" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+  </div>
+</header>
 
-<div class="wrap">
-  <section class="hero">
-    <h1>教學字型庫</h1>
-    <p class="lede">台灣教學網頁與學習單可以放心用的開源字型。每一套都附樣張、授權重點和可以直接貼上的署名文字；授權都讀過上游原文才寫進來。</p>
-    <p class="stamp"><span>收錄 <b>{{COUNT}}</b> 套</span><span>頁面產生 <b>{{BUILT}}</b></span><span>正本：<code>fonts.toml</code></span></p>
-  </section>
-
-  <section class="section" aria-labelledby="pick">
-    <h2 id="pick">先看這裡：怎麼挑</h2>
-    <dl class="guide">
-      <div><dt>網頁要顯示注音</dt><dd><a href="#bpmf-zihi-kai-std">字嗨注音標楷</a>，Google Fonts 可直接載入。互動教材仍建議用 HTML 自己排注音，讀音才由教材決定。</dd></div>
-      <div><dt>紙本學習單要注音</dt><dd>安裝<a href="#bpmf-zihi-kai-std">字嗨注音標楷</a>或<a href="#bpmf-iansui">注音芫荽</a>，破音字用官方讀音選擇工具選好再貼進 Word。</dd></div>
-      <div><dt>學寫字、對照筆畫</dt><dd><a href="#iansui">芫荽</a>或<a href="#tw-kai">全字庫正楷體</a>。教育部標準楷書禁止改作，只能整檔安裝。</dd></div>
-      <div><dt>閱讀長文、介面文字</dt><dd>內文用<a href="#lxgw-wenkai-tc">霞鶩文楷 TC</a>，介面用<a href="#noto-sans-tc">思源黑體 TC</a>；兩者都在 Google Fonts 上。</dd></div>
-      <div><dt>低年級標題、遊戲化</dt><dd><a href="#huninn">jf open 粉圓</a>、<a href="#gensen-rounded">源泉圓體</a>，RPG 介面用<a href="#cubic-11">俐方體 11 號</a>。</dd></div>
-      <div><dt>需要漢語拼音</dt><dd><a href="#tw-pinyin-kai">臺灣拼音楷</a>，讀音採臺灣教育部標準，瀏覽器會依詞語自動判斷多音字。</dd></div>
-    </dl>
-  </section>
-
-  <section class="section" aria-labelledby="all">
-    <h2 id="all">全部字型</h2>
-    <div class="filters" role="toolbar" aria-label="篩選字型">
-      <span class="label">風格</span>
-      <button type="button" id="f-all" data-style="" aria-pressed="true">全部</button>
-      <button type="button" id="f-kai" data-style="楷書" aria-pressed="false">楷書</button>
-      <button type="button" id="f-hand" data-style="手寫楷" aria-pressed="false">手寫楷</button>
-      <button type="button" id="f-free" data-style="手寫" aria-pressed="false">手寫</button>
-      <button type="button" id="f-hei" data-style="黑體" aria-pressed="false">黑體</button>
-      <button type="button" id="f-ming" data-style="明體" aria-pressed="false">明體</button>
-      <button type="button" id="f-round" data-style="圓體" aria-pressed="false">圓體</button>
-      <button type="button" id="f-pixel" data-style="像素" aria-pressed="false">像素</button>
-      <span class="sep" aria-hidden="true"></span>
-      <button type="button" id="t-zhuyin" data-tag="zhuyin" aria-pressed="false">只看注音</button>
-      <button type="button" id="t-web" data-tag="web" aria-pressed="false">可裁字放網頁</button>
-      <span class="count" id="count" aria-live="polite"></span>
+<div class="shell">
+  <aside class="side" aria-label="篩選與目錄">
+    <div class="side-box filter-box">
+      <h2>篩選字型</h2>
+      <p class="side-label">風格</p>
+      <div class="filters" role="toolbar" aria-label="篩選字型">
+        <button type="button" data-style="" aria-pressed="true">全部</button>
+        <button type="button" data-style="楷書" aria-pressed="false">楷書</button>
+        <button type="button" data-style="手寫楷" aria-pressed="false">手寫楷</button>
+        <button type="button" data-style="手寫" aria-pressed="false">手寫</button>
+        <button type="button" data-style="黑體" aria-pressed="false">黑體</button>
+        <button type="button" data-style="明體" aria-pressed="false">明體</button>
+        <button type="button" data-style="圓體" aria-pressed="false">圓體</button>
+        <button type="button" data-style="像素" aria-pressed="false">像素</button>
+        <button type="button" data-tag="zhuyin" aria-pressed="false">只看注音</button>
+        <button type="button" data-tag="gf" aria-pressed="false">Google Fonts</button>
+        <button type="button" data-tag="web" aria-pressed="false">可裁字放網頁</button>
+        <button type="button" data-tag="noattr" aria-pressed="false">不必署名</button>
+      </div>
+      <p class="count" id="count" aria-live="polite"></p>
     </div>
-    <div class="cards" id="cards">
-{{CARDS}}
+    <div class="side-box extra">
+      <h2>授權速查</h2>
+      <ul class="legend">
+        <li><b>OFL-1.1</b>可商用、可改；改了不能用原名，不能單獨賣字型檔</li>
+        <li><b>CC-BY-4.0</b>可商用、可改；一定要署名</li>
+        <li><b>CC-BY-ND-3.0-TW</b>可商用；不能改、不能裁字，要標示教育部</li>
+      </ul>
+      <a href="#license">看完整授權說明</a>
     </div>
-  </section>
-
-  <section class="section" aria-labelledby="lic">
-    <h2 id="lic">授權怎麼看</h2>
-    <div class="table-wrap">
-      <table>
-        <thead><tr><th>授權</th><th>可商用</th><th>可修改、裁字</th><th>要做的事</th></tr></thead>
-        <tbody>
-          <tr><td><code>OFL-1.1</code></td><td>可以</td><td>可以，但有「保留名稱」的字型改過要換名字</td><td>不能單獨賣字型檔；再散布字型檔要附授權原文</td></tr>
-          <tr><td><code>CC-BY-4.0</code></td><td>可以</td><td>可以</td><td>作品上標示字型名稱與作者（用卡片上的「複製署名」）</td></tr>
-          <tr><td><code>CC-BY-ND-3.0-TW</code></td><td>可以</td><td>不可以：不能裁字、不能轉網頁字型</td><td>標示「中華民國教育部」；只整檔安裝使用</td></tr>
-          <tr><td>政府資料開放授權條款</td><td>可以</td><td>可以</td><td>全字庫可在此條款與 OFL 間擇一，本清單選 OFL</td></tr>
-        </tbody>
-      </table>
-    </div>
-  </section>
-
-  <section class="section" aria-labelledby="others">
-    <h2 id="others">別人做的字型整理</h2>
-    <div class="prose">
-      <p>2026-11-12 查到的現況：沒有找到專門整理「台灣繁體＋注音字型授權」的清單，所以這份值得自己維護。下面幾個可以參考：</p>
-      <ul>
-        <li><a href="https://github.com/jaywcjlove/free-font" target="_blank" rel="noopener">jaywcjlove/free-font</a>：最活躍的中文免費字型清單，每套字型有授權分類，但偏簡體，也不記版本和署名文字。</li>
-        <li><a href="https://github.com/google/fonts" target="_blank" rel="noopener">Google Fonts 的 METADATA.pb</a>：每套字型一個資料夾，附授權原文與上游 commit。本 repo 的欄位設計參考它。</li>
-        <li><a href="https://github.com/KonghaYao/chinese-free-web-font-storage" target="_blank" rel="noopener">中文網字計劃</a>：把中文字型切片放上網頁 CDN，適合參考網頁載入做法。</li>
-        <li><a href="https://github.com/ButTaiwan" target="_blank" rel="noopener">ButTaiwan</a>：注音字型規格 bpmfvs、芫荽、源樣系列的作者，是台灣注音字型最主要的一手來源。</li>
+    <div class="side-box extra">
+      <h2>目錄</h2>
+      <ul class="jump">
+        <li><a href="#pick">怎麼挑</a></li>
+        <li><a href="#fonts">全部字型</a></li>
+        <li><a href="#license">授權說明</a></li>
+        <li><a href="#scenes">　用途對照表</a></li>
+        <li><a href="#licenses">　四種授權</a></li>
+        <li><a href="#rfn">　保留名稱與署名</a></li>
+        <li><a href="#table">　每套字型總表</a></li>
+        <li><a href="#others">別人做的整理</a></li>
+        <li><a href="#how">怎麼用</a></li>
       </ul>
     </div>
-  </section>
+  </aside>
 
-  <section class="section" aria-labelledby="how">
-    <h2 id="how">在專案裡怎麼用</h2>
-    <div class="prose">
-      <p>字型檔不放進 git。<code>fonts.toml</code> 記來源與授權，腳本負責下載、核對和裁字：</p>
-    </div>
-<pre>python3 scripts/fontlib.py list                     # 看有哪些字型
-python3 scripts/fontlib.py fetch bpmf-zihi-kai-std   # 下載，核對 sha256
-python3 scripts/fontlib.py install bpmf-zihi-kai-std # 裝到電腦給 Word、Pages 用
-python3 scripts/fontlib.py attribution iansui        # 印出署名文字
+  <main>
+    <section class="hero" aria-labelledby="title">
+      <span class="bookmark" aria-hidden="true">字型書房</span>
+      <div class="hero-text">
+        <span class="coach-name">奧瑞恩小講師</span>
+        <h1 id="title">教學字型庫</h1>
+        <p class="lede">台灣教學網頁與學習單可以放心用的開源字型。每一套都附樣張、白話授權說明，還有可以直接貼上的署名文字。授權都讀過上游原文才寫進來，原文也一起存在 repo 裡。</p>
+        <div class="stats">
+          <span><b>{{COUNT}}</b>套字型</span>
+          <span><b>{{N_COMMERCIAL}}</b>套可商用</span>
+          <span><b>{{N_ZHUYIN}}</b>套有注音</span>
+          <span><b>{{N_GF}}</b>套在 Google Fonts</span>
+          <span><b>{{VERIFIED}}</b>授權查證日</span>
+        </div>
+      </div>
+      <img class="hero-dragon" src="assets/aurelion/read-open.webp" alt="奧瑞恩打開一本書" width="250" height="250">
+    </section>
 
-# 網頁：只裁出頁面用到的字，通常只剩幾十 KB
+    <section class="section" aria-labelledby="pick">
+      <div class="section-head"><h2 id="pick">先看這裡：怎麼挑</h2><p>依你要做的東西挑，點了會跳到那套字型。</p></div>
+      <div class="guide">
+        <a class="pick" href="#bpmf-zihi-kai-std"><img src="assets/aurelion/wave.webp" alt="" width="76" height="76"><span><b>網頁要顯示注音</b><small>字嗨注音標楷，Google Fonts 直接載入。互動教材仍建議用 HTML 自己排注音，讀音由教材決定。</small></span></a>
+        <a class="pick" href="#bpmf-iansui"><img src="assets/aurelion/read-look-up.webp" alt="" width="76" height="76"><span><b>紙本學習單要注音</b><small>安裝字嗨注音標楷或注音芫荽；破音字用官方讀音選擇工具選好，再貼進 Word。</small></span></a>
+        <a class="pick" href="#iansui"><img src="assets/aurelion/point-left.webp" alt="" width="76" height="76"><span><b>學寫字、對照筆畫</b><small>芫荽或全字庫正楷體。教育部標準楷書禁止改作，只能整檔安裝在電腦上。</small></span></a>
+        <a class="pick" href="#lxgw-wenkai-tc"><img src="assets/aurelion/think.webp" alt="" width="76" height="76"><span><b>閱讀長文、介面文字</b><small>內文用霞鶩文楷 TC，介面用思源黑體 TC，兩套都在 Google Fonts 上。</small></span></a>
+        <a class="pick" href="#huninn"><img src="assets/aurelion/cheer.webp" alt="" width="76" height="76"><span><b>低年級標題、遊戲化</b><small>jf open 粉圓、源泉圓體；RPG 風格介面用俐方體 11 號。</small></span></a>
+        <a class="pick" href="#tw-pinyin-kai"><img src="assets/aurelion/point-up-left.webp" alt="" width="76" height="76"><span><b>需要漢語拼音</b><small>臺灣拼音楷，讀音照臺灣教育部標準，瀏覽器會依詞語自動判斷多音字。</small></span></a>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="fonts">
+      <div class="section-head"><h2 id="fonts">全部字型</h2><p>每張卡的「可以怎麼用」是依授權原文整理的白話版。</p></div>
+      <div class="cards" id="cards">
+{{CARDS}}
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="license">
+      <div class="section-head"><h2 id="license">授權說明</h2></div>
+      <div class="coach">
+        <img src="assets/aurelion/surprise.webp" alt="奧瑞恩提醒大家注意" width="128" height="128">
+        <div class="say">
+          <span class="coach-name">先講結論</span>
+          <p>這裡 {{COUNT}} 套字型都可以免費用在學習單、網頁，也可以用在收費的教材或課程。要注意的只有三件事：</p>
+          <ol>
+            <li><b>教育部標準楷書</b>不能裁字、不能轉成網頁字型，只能整檔安裝在電腦上使用。</li>
+            <li>有<b>保留名稱</b>的字型（字嗨、思源／源樣／源泉系列、俐方體），修改或裁字之後要換名字。</li>
+            <li><b>字嗨注音標楷</b>和<b>教育部標準楷書</b>一定要署名；其他字型署名不是必要，但建議放。</li>
+          </ol>
+        </div>
+      </div>
+
+      <h3 id="scenes">用途對照表</h3>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">我想要……</th>
+              <th scope="col">OFL 1.1<small>本庫大多數字型</small></th>
+              <th scope="col">字嗨注音標楷<small>漢字 CC BY 4.0＋其餘 OFL 1.1</small></th>
+              <th scope="col">教育部標準楷書<small>CC BY-ND 3.0 TW</small></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row">安裝在電腦，做學習單、簡報、印給學生</th><td><span class="y">✓</span>可以</td><td><span class="y">✓</span>可以，作品上署名</td><td><span class="y">✓</span>可以，標示「中華民國教育部」</td></tr>
+            <tr><th scope="row">做成 PDF、圖片或影片公開，或用在收費教材</th><td><span class="y">✓</span>可以；用字型做出的作品不受 OFL 約束</td><td><span class="y">✓</span>可以，作品上署名</td><td><span class="y">✓</span>可以，標示「中華民國教育部」</td></tr>
+            <tr><th scope="row">網頁用 Google Fonts 載入</th><td><span class="y">✓</span>有上架的可以（看卡片上的 Google Fonts 欄）</td><td><span class="y">✓</span>可以，頁尾署名</td><td><span class="n">✕</span>沒有上架，也不能自己轉</td></tr>
+            <tr><th scope="row">只裁出用到的字，做成網頁字型</th><td><span class="y">✓</span>可以；有保留名稱的要改名（腳本會自動改）</td><td><span class="y">✓</span>可以；要改名，也要署名</td><td><span class="n">✕</span>不行，裁字就是改作</td></tr>
+            <tr><th scope="row">修改字形、跟別的字型合併</th><td><span class="y">✓</span>可以；新字型仍要用 OFL 釋出，不能用保留名稱</td><td><span class="y">✓</span>可以；同左，並保留原作者署名</td><td><span class="n">✕</span>不行</td></tr>
+            <tr><th scope="row">把字型檔附在作品、壓縮檔或 repo 裡給別人</th><td><span class="c">!</span>可以，但要一起附上版權聲明和 OFL 原文</td><td><span class="c">!</span>可以，附上兩份授權原文與署名</td><td><span class="c">!</span>只能原檔不改，附上標示與授權連結</td></tr>
+            <tr><th scope="row">單獨販售字型檔</th><td><span class="n">✕</span>不行，OFL 禁止單獨賣字型</td><td><span class="n">✕</span>不行（漢字以外的部分是 OFL）</td><td><span class="n">✕</span>不要做；這是官方免費提供的檔案</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="fine">✓ 可以　! 可以但有條件　✕ 不行。全字庫正楷體、全字庫正宋體也可以改選「政府資料開放授權條款」，結果和 OFL 這一欄幾乎一樣，差在要標示提供機關；本庫統一採 OFL。</p>
+
+      <h3 id="licenses">四種授權，白話版</h3>
+      <div class="lics">
+        <article class="lic-card">
+          <h3>SIL 開源字型授權 1.1（OFL 1.1）</h3>
+          <p class="who">本庫 {{N_OFL}} 套字型；字嗨注音標楷的漢字以外部分也是。</p>
+          <dl>
+            <dt>可以</dt><dd>免費使用（包含商用）、修改、裁字、嵌入網頁與 App、跟軟體一起散布或販售。</dd>
+            <dt>要做</dt><dd>散布字型檔時附上版權聲明與 OFL 原文；修改版也要用 OFL 釋出。</dd>
+            <dt>不行</dt><dd>單獨販售字型檔；修改版沿用「保留名稱」（Reserved Font Name）。</dd>
+            <dt>用字型做出來的東西</dt><dd>學習單、海報、網頁內容不受 OFL 約束，你的作品是你的。</dd>
+          </dl>
+          <a href="https://openfontlicense.org/open-font-license-official-text/" target="_blank" rel="noopener">OFL 1.1 官方原文</a>
+        </article>
+        <article class="lic-card">
+          <h3>創用 CC 姓名標示 4.0（CC BY 4.0）</h3>
+          <p class="who">字嗨注音標楷的漢字部分。</p>
+          <dl>
+            <dt>可以</dt><dd>任何用途（包含商用）重製、散布、修改。</dd>
+            <dt>要做</dt><dd>標示作者與作品名稱、附上授權連結，有修改要註明。卡片上的「複製署名」就是現成文字。</dd>
+            <dt>不行</dt><dd>拿掉署名，或暗示原作者替你背書。</dd>
+          </dl>
+          <a href="https://creativecommons.org/licenses/by/4.0/deed.zh-hant" target="_blank" rel="noopener">CC BY 4.0 授權摘要</a>
+        </article>
+        <article class="lic-card">
+          <h3>創用 CC 姓名標示－禁止改作 3.0 臺灣（CC BY-ND 3.0 TW）</h3>
+          <p class="who">教育部標準楷書。</p>
+          <dl>
+            <dt>可以</dt><dd>安裝使用（包含商用）、原檔不改地轉給別人。</dd>
+            <dt>要做</dt><dd>標示「中華民國教育部」，附上授權連結。</dd>
+            <dt>不行</dt><dd>任何改作：裁字、轉成 woff2 網頁字型、修改字形、合併字型。</dd>
+          </dl>
+          <a href="https://creativecommons.org/licenses/by-nd/3.0/tw/" target="_blank" rel="noopener">CC BY-ND 3.0 TW 授權摘要</a>
+        </article>
+        <article class="lic-card">
+          <h3>政府資料開放授權條款第 1 版</h3>
+          <p class="who">全字庫的另一個選項（數位發展部讓使用者在它和 OFL 之間擇一）。</p>
+          <dl>
+            <dt>可以</dt><dd>任何用途（包含商用）重製、改作、散布。</dd>
+            <dt>要做</dt><dd>標示提供機關（數位發展部）與資料名稱。</dd>
+            <dt>注意</dt><dd>兩種授權只能選一種，不能同時主張；本庫選 OFL 1.1，授權原文放在 <code>licenses/tw-kai/</code>。</dd>
+          </dl>
+          <a href="https://data.gov.tw/license" target="_blank" rel="noopener">政府資料開放授權條款原文</a>
+        </article>
+      </div>
+
+      <div class="twocol" id="rfn">
+        <div class="note">
+          <h3>保留名稱是什麼</h3>
+          <p>OFL 允許作者保留字型名稱。修改過的字型（包含只裁出部分字的網頁字型）不能再用這個名字，避免別人把改壞的版本當成原版。</p>
+          <ul>
+            <li>本庫有保留名稱的：{{RFN_LIST}}。</li>
+            <li><code>fontlib.py subset</code> 會自動把裁切版改名，例如「字嗨」改成 <code>FL bpmf-kai-std</code>；CSS 的 <code>font-family</code> 用指令印出的名字。</li>
+            <li>直接用 Google Fonts 載入不算你修改，不用改名。</li>
+          </ul>
+        </div>
+        <div class="note">
+          <h3>署名怎麼放</h3>
+          <p>每張卡都有「複製署名」。用了幾套就放幾行，位置選一個固定的地方：</p>
+          <ul>
+            <li>學習單、簡報：最後一頁或頁尾小字。</li>
+            <li>網頁：頁尾，或「關於與聲明」頁的資料來源段。</li>
+            <li>影片：片尾字幕或說明欄。</li>
+          </ul>
+          <pre>字型：字嗨注音標楷 © 2020 But Ko（漢字 CC BY 4.0／其他 OFL 1.1）
+字型：教育部標準楷書，中華民國教育部（CC BY-ND 3.0 TW）</pre>
+        </div>
+      </div>
+
+      <h3 id="table">每套字型授權總表</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th scope="col">字型</th><th scope="col">授權</th><th scope="col">商用</th><th scope="col">修改、裁字</th><th scope="col">署名</th><th scope="col">保留名稱</th><th scope="col">網頁做法</th><th scope="col">授權原文</th></tr></thead>
+          <tbody>
+{{LICENSE_ROWS}}
+          </tbody>
+        </table>
+      </div>
+
+      <div class="note warn">
+        <h3>免責與查證方式</h3>
+        <p>這頁是給老師看的白話整理，不是法律意見；如有出入，以各字型上游的授權原文為準。每套字型的授權都由我讀過原文後填寫，查證日期寫在卡片上，原文存在 repo 的 <a href="https://github.com/cyclone-tw/font-library/tree/main/licenses" target="_blank" rel="noopener"><code>licenses/</code></a> 資料夾。上游如果改了授權，以新版為準，也歡迎到 GitHub 開 issue 告訴我。</p>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="others">
+      <div class="section-head"><h2 id="others">別人做的字型整理</h2></div>
+      <div class="prose">
+        <p>2026-11-12 查到的現況：沒有找到專門整理「台灣繁體＋注音字型授權」的清單，所以這份自己維護。下面幾個可以參考：</p>
+        <ul>
+          <li><a href="https://github.com/jaywcjlove/free-font" target="_blank" rel="noopener">jaywcjlove/free-font</a>：最活躍的中文免費字型清單，每套有授權分類，但偏簡體，也不記版本和署名文字。</li>
+          <li><a href="https://github.com/google/fonts" target="_blank" rel="noopener">Google Fonts 的 METADATA.pb</a>：每套字型一個資料夾，附授權原文與上游 commit。本 repo 的欄位設計參考它。</li>
+          <li><a href="https://github.com/KonghaYao/chinese-free-web-font-storage" target="_blank" rel="noopener">中文網字計劃</a>：把中文字型切片放上網頁 CDN，適合參考網頁載入做法。</li>
+          <li><a href="https://github.com/ButTaiwan" target="_blank" rel="noopener">ButTaiwan</a>：注音字型規格 bpmfvs、芫荽、源樣系列的作者，是台灣注音字型最主要的一手來源。</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="how">
+      <div class="section-head"><h2 id="how">在專案裡怎麼用</h2><p>字型檔不放進 git；<code>fonts.toml</code> 記來源與授權，腳本負責下載、核對和裁字。</p></div>
+<pre><span class="cm"># 看有哪些字型、下載並核對 sha256</span>
+python3 scripts/fontlib.py list
+python3 scripts/fontlib.py fetch bpmf-zihi-kai-std
+
+<span class="cm"># 裝到電腦給 Word、Pages 用；印出署名文字</span>
+python3 scripts/fontlib.py install bpmf-zihi-kai-std
+python3 scripts/fontlib.py attribution iansui
+
+<span class="cm"># 網頁：只裁出頁面用到的字，通常只剩幾十 KB</span>
 uv run --with fonttools --with brotli python scripts/fontlib.py \
   subset iansui --text-file lesson.html -o fonts/iansui-lesson.woff2</pre>
-  </section>
-
-  <footer>樣張用的是各字型的裁切子集，只含這頁用到的字。有保留名稱的字型，裁切版已改名。字型授權以各上游原文為準。</footer>
+      <p class="fine">樣張用的是各字型的裁切子集，只含這頁用到的字；有保留名稱的字型，裁切版已改名。頁面產生日期 {{BUILT}}。</p>
+    </section>
+  </main>
 </div>
+
+<footer class="foot">
+  <div class="ip">
+    <a class="ip-who" href="https://cyclonetw.dev/" target="_blank" rel="noopener">
+      <img src="assets/cyclone-avatar.png" alt="Cyclone 的龍頭像" width="40" height="40">
+      <span><b>Cyclone</b>｜<small>UDL 教材設計・AI 教材與工具實作</small></span>
+    </a>
+    <span>© 2026 Cyclone</span>
+    <a class="ip-link" href="about.html">關於與聲明・About</a>
+  </div>
+  <p>字型的著作權屬於各原作者；清單與腳本以 MIT 授權公開。</p>
+</footer>
 
 <script>
 (() => {
@@ -237,16 +585,20 @@ uv run --with fonttools --with brotli python scripts/fontlib.py \
     }
     count.textContent = `顯示 ${n} / ${cards.length} 套`;
   }
+  const toCards = () => {
+    const top = document.getElementById('fonts').getBoundingClientRect().top;
+    if (top < 0 || top > innerHeight * 0.8) document.getElementById('fonts').scrollIntoView({ block: 'start' });
+  };
   styleBtns.forEach(b => b.addEventListener('click', () => {
     style = b.dataset.style;
     styleBtns.forEach(x => x.setAttribute('aria-pressed', String(x === b)));
-    apply();
+    apply(); toCards();
   }));
   tagBtns.forEach(b => b.addEventListener('click', () => {
     const on = b.getAttribute('aria-pressed') !== 'true';
     b.setAttribute('aria-pressed', String(on));
     on ? tags.add(b.dataset.tag) : tags.delete(b.dataset.tag);
-    apply();
+    apply(); toCards();
   }));
   document.querySelectorAll('.copy').forEach(btn => btn.addEventListener('click', () => {
     const el = document.getElementById(btn.dataset.target);
@@ -257,3 +609,5 @@ uv run --with fonttools --with brotli python scripts/fontlib.py \
   apply();
 })();
 </script>
+</body>
+</html>

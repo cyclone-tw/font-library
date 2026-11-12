@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#1b2559">
+<title>關於與聲明｜教學字型庫</title>
+<link rel="icon" href="assets/aurelion/icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Huninn&family=LXGW+WenKai+TC:wght@700&family=Noto+Sans+TC:wght@400;500;700&display=swap">
+<style>
+:root {
+  color-scheme: light;
+  --night: #10173f; --navy: #1b2559; --royal: #2f4fa8; --gold: #e2ae45; --gold-2: #f6cf6a;
+  --parchment: #fdf6e4; --page: #fffdf7; --line: #efdcb2; --ink: #1f2547; --muted: #5a5470;
+  --kai: "LXGW WenKai TC", "Kaiti TC", "BiauKai", serif;
+  --round: "Huninn", "Noto Sans TC", "PingFang TC", sans-serif;
+  --gutter: clamp(16px, 2.6vw, 40px);
+}
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+body {
+  margin: 0; color: var(--ink); overflow-wrap: anywhere;
+  font: 17px/1.8 "Noto Sans TC", -apple-system, "PingFang TC", "Microsoft JhengHei", sans-serif;
+  background:
+    radial-gradient(1400px 520px at 50% -160px, #e9e2ff66, transparent 70%),
+    radial-gradient(circle at 12% 30%, #f6cf6a1c 0 2px, transparent 3px) 0 0 / 46px 46px,
+    var(--parchment);
+}
+a { color: var(--royal); }
+:focus-visible { outline: 3px solid #3a5cb8; outline-offset: 2px; }
+.top {
+  position: sticky; top: 0; z-index: 10; color: #fff;
+  background:
+    radial-gradient(circle at 20% 30%, #fff8 0 1px, transparent 2px) 0 0 / 120px 60px,
+    linear-gradient(180deg, var(--night), var(--navy));
+  box-shadow: 0 3px 0 var(--gold);
+}
+.top-in { height: 64px; padding: 0 var(--gutter); display: flex; align-items: center; gap: 12px; }
+.brand { display: flex; align-items: center; gap: 10px; color: #fff; text-decoration: none; }
+.brand img { width: 44px; height: 44px; border-radius: 50%; border: 3px solid var(--gold); background: var(--navy); }
+.brand span { font-family: var(--kai); font-weight: 700; font-size: 1.2rem; color: var(--gold-2); line-height: 1.15; }
+.brand small { display: block; font-family: var(--round); font-weight: 400; font-size: .75rem; color: #e6e9ff; letter-spacing: .1em; }
+.lang { margin-left: auto; font: inherit; font-family: var(--round); font-size: .95rem; min-height: 40px; padding: 4px 16px; border-radius: 999px; border: 2px solid var(--gold-2); background: transparent; color: var(--gold-2); cursor: pointer; }
+main { max-width: 52rem; margin: 0 auto; padding: 32px 16px 64px; }
+article { background: var(--page); border: 2px solid var(--line); border-top: 6px solid var(--gold); border-radius: 20px; box-shadow: 0 5px 0 var(--line); padding: 8px 28px 28px; }
+h1, h2 { font-family: var(--kai); font-weight: 700; line-height: 1.3; color: var(--navy); }
+h1 { font-size: 2rem; margin: 18px 0 12px; }
+h2 { font-size: 1.3rem; margin: 26px 0 6px; }
+p { margin: 0 0 10px; }
+.who { display: flex; gap: 14px; align-items: center; }
+.who img { width: 72px; height: 72px; border-radius: 50%; border: 3px solid var(--gold); }
+.who b { font-size: 1.15rem; }
+.who span { color: var(--muted); }
+.claim { font-family: var(--kai); font-weight: 700; font-size: 1.35rem; color: var(--navy); margin: 16px 0 0; }
+.back { display: inline-block; margin-top: 20px; font-family: var(--round); }
+@media (max-width: 560px) { article { padding: 4px 18px 22px; } }
+@media (prefers-reduced-motion: no-preference) {
+  .who img { animation: pop .6s ease-out both; }
+  .claim { animation: brush 1s steps(14, end) both .2s; clip-path: inset(0 0 0 0); }
+  section { animation: fade .5s ease-out both; }
+  section:nth-of-type(2) { animation-delay: .1s; } section:nth-of-type(3) { animation-delay: .2s; }
+  section:nth-of-type(4) { animation-delay: .3s; } section:nth-of-type(5) { animation-delay: .4s; }
+  section:nth-of-type(6) { animation-delay: .5s; } section:nth-of-type(7) { animation-delay: .6s; }
+  @keyframes pop { from { opacity: 0; transform: scale(.8); } }
+  @keyframes fade { from { opacity: 0; transform: translateY(6px); } }
+  @keyframes brush { from { clip-path: inset(0 100% 0 0); } }
+}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="top-in">
+    <a class="brand" href="./"><img src="assets/aurelion/icon.png" alt="" width="44" height="44"><span><small>奧瑞恩小學堂</small>教學字型庫</span></a>
+    <button type="button" class="lang" id="lang">English</button>
+  </div>
+</header>
+<main>
+  <article data-lang="zh">
+    <section>
+      <h1>關於與聲明</h1>
+      <div class="who"><img src="assets/cyclone-avatar.png" alt="Cyclone 的龍頭像" width="72" height="72"><div><b>Cyclone</b><br><span>UDL 教材設計・AI 教材與工具實作</span></div></div>
+      <p class="claim">同一份教材，每個孩子都有路走進來。</p>
+    </section>
+    <section>
+      <h2>我是誰</h2>
+      <p>我是 Cyclone。我相信教材從一開始就該為不同的孩子設計：看得懂、聽得到、點得到、寫得下。我致力以全方位學習設計（UDL）的理念規劃每一份教材，再和 AI 一起做成網站、練習單與學習遊戲，讓老師拿了就能用，孩子用自己的方式學會。</p>
+      <p><a href="https://cyclonetw.dev/" target="_blank" rel="noopener">cyclonetw.dev</a></p>
+    </section>
+    <section>
+      <h2>這個網站</h2>
+      <p>教學字型庫整理台灣教學網頁與學習單可以使用的開源字型，每一套附樣張、白話授權說明與可以直接貼上的署名文字。免費、免登入、沒有廣告。奧瑞恩是奧瑞恩小學堂的吉祥物。</p>
+    </section>
+    <section>
+      <h2>AI 怎麼參與</h2>
+      <p>網站程式、版面與字型清單，是我和 AI 程式助理一起完成的。每套字型的授權欄位都是讀過上游授權原文後才填寫，並記下查證日期。奧瑞恩的插圖由 AI 生成，經過人工挑選。如果發現錯誤，歡迎到 <a href="https://github.com/cyclone-tw/font-library/issues" target="_blank" rel="noopener">GitHub</a> 告訴我。</p>
+    </section>
+    <section>
+      <h2>資料來源與授權</h2>
+      <p>字型與授權原文來自各字型作者的官方發布處：GitHub、Google Fonts、政府資料開放平臺（全字庫）、教育部（標準楷書）。每套字型的授權寫在卡片與授權總表上，原文存在 repo 的 <a href="https://github.com/cyclone-tw/font-library/tree/main/licenses" target="_blank" rel="noopener">licenses/</a> 資料夾。</p>
+      <p>本站的字型清單與管理腳本以 MIT 授權公開。</p>
+    </section>
+    <section>
+      <h2>隱私</h2>
+      <p>本站沒有帳號，不蒐集任何個人資料，也沒有追蹤程式。網頁由 GitHub Pages 提供；介面文字與部分樣張從 Google Fonts 載入，瀏覽器會連到 Google 的伺服器下載字型。</p>
+    </section>
+    <section>
+      <h2>著作權與免責</h2>
+      <p>網站程式與版面 © 2026 Cyclone。奧瑞恩角色與龍頭像 © 2026 Cyclone，不在 MIT 授權範圍內，請不要另作他用。各字型的著作權屬於原作者。</p>
+      <p>本站的授權說明是給老師看的白話整理，不是法律意見；如有出入，以各字型上游的授權原文為準。</p>
+    </section>
+    <a class="back" href="./">回到教學字型庫</a>
+  </article>
+
+  <article data-lang="en" lang="en" hidden>
+    <section>
+      <h1>About</h1>
+      <div class="who"><img src="assets/cyclone-avatar.png" alt="Cyclone's dragon avatar" width="72" height="72"><div><b>Cyclone</b><br><span>UDL learning design · AI-built materials and tools</span></div></div>
+      <p class="claim">One set of materials, a way in for every child.</p>
+    </section>
+    <section>
+      <h2>Who I am</h2>
+      <p>I'm Cyclone. I believe learning materials should be designed for different children from the start: easy to read, easy to hear, easy to tap, easy to write. I'm committed to planning every piece around the principles of Universal Design for Learning (UDL), then building it with AI into websites, worksheets and learning games, so teachers can use it right away and every child can learn in their own way.</p>
+      <p><a href="https://cyclonetw.dev/" target="_blank" rel="noopener">cyclonetw.dev</a></p>
+    </section>
+    <section>
+      <h2>This site</h2>
+      <p>The Teaching Font Library lists open-source fonts that Taiwanese teachers can use in web lessons and worksheets, each with a specimen, a plain-language license summary and a ready-to-paste attribution line. Free, no sign-in, no ads. Aurelion is the mascot of Aurelion's Little School.</p>
+    </section>
+    <section>
+      <h2>How AI is involved</h2>
+      <p>The site code, layout and font list were built together with an AI coding assistant. Every license field was filled in only after reading the upstream license text, and the check date is recorded. Aurelion's illustrations were AI-generated and hand-picked. If you find a mistake, please let me know on <a href="https://github.com/cyclone-tw/font-library/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+    </section>
+    <section>
+      <h2>Sources and licenses</h2>
+      <p>Fonts and license texts come from each font's official release: GitHub, Google Fonts, Taiwan's open government data platform (CNS11643 fonts) and the Ministry of Education (Standard Kai). The license texts are kept in the repo's <a href="https://github.com/cyclone-tw/font-library/tree/main/licenses" target="_blank" rel="noopener">licenses/</a> folder. The font list and scripts are released under the MIT License.</p>
+    </section>
+    <section>
+      <h2>Privacy</h2>
+      <p>No accounts, no personal data collected, no trackers. The site is hosted on GitHub Pages; interface text and some specimens load from Google Fonts, so your browser connects to Google's servers to download them.</p>
+    </section>
+    <section>
+      <h2>Copyright and disclaimer</h2>
+      <p>Site code and layout © 2026 Cyclone. The Aurelion character and dragon avatar © 2026 Cyclone and are not covered by the MIT License. Each font belongs to its authors. The license notes here are plain-language summaries, not legal advice; the upstream license texts prevail.</p>
+    </section>
+    <a class="back" href="./">Back to the font library</a>
+  </article>
+</main>
+<script>
+  document.getElementById("lang").addEventListener("click", (e) => {
+    const zh = document.querySelector('[data-lang="zh"]');
+    const en = document.querySelector('[data-lang="en"]');
+    const toEn = !zh.hidden;
+    zh.hidden = toEn;
+    en.hidden = !toEn;
+    document.documentElement.lang = toEn ? "en" : "zh-Hant";
+    e.currentTarget.textContent = toEn ? "中文" : "English";
+  });
+</script>
+</body>
+</html>

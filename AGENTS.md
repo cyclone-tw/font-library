@@ -13,7 +13,9 @@
 
 ## 改這個 repo 時
 
-- `fonts.toml` 是唯一正本，`docs/index.html` 由 `showcase` 指令產生，不要手改。
+- `fonts.toml` 是唯一正本，`docs/index.html` 由 `showcase` 指令產生，不要手改；要改版面就改 `scripts/showcase.template.html` 再重產。
+- `docs/` 是 GitHub Pages 網站。`docs/about.html` 手寫維護，個人 IP 文字照 `personal-ip` skill，不自行改寫。
+- `docs/assets/` 的奧瑞恩插圖與龍頭像不是 MIT，不要拿去別的 repo。
 - 授權欄位要讀過上游授權原文才填，`license.verified` 寫查證日期；部落格、整理站只能拿來發現新字型。
 - 字型檔（`.ttf`／`.otf`／`.woff2`／`.zip`）不進 git，`.gitignore` 已擋。
 - 改完跑 `python3 scripts/fontlib.py check`。

@@ -3,7 +3,9 @@
 收集台灣教學網頁與學習單可以使用的開源字型，記錄來源、版本、授權與署名文字。
 字型檔本身**不進 git**，由腳本依清單下載並核對 sha256。
 
-- 說明頁：`docs/index.html`（由 `fonts.toml` 產生，含每套字型的樣張）
+- 說明頁：https://cyclone-tw.github.io/font-library/ （GitHub Pages，來源 `docs/`）
+  - `docs/index.html` 由 `fonts.toml` 和 `scripts/showcase.template.html` 產生，含樣張與授權說明
+  - `docs/about.html` 關於與聲明頁，手寫維護
 - 清單正本：`fonts.toml`
 - 下載紀錄與 sha256：`fonts.lock.json`（腳本寫入）
 - 授權原文：`licenses/<id>/`
@@ -79,3 +81,9 @@ uv run --with fonttools --with brotli python scripts/fontlib.py showcase
 ## 授權
 
 本 repo 的清單與腳本：MIT。各字型的授權見 `licenses/<id>/` 與 `fonts.toml`，以上游原文為準。
+
+## 授權
+
+清單（`fonts.toml`）、腳本與網頁程式以 MIT 授權公開（見 `LICENSE`）。
+`docs/assets/` 裡的奧瑞恩插圖與 Cyclone 龍頭像 © 2026 Cyclone，不在 MIT 授權範圍內。
+各字型的授權見 `licenses/<id>/`。

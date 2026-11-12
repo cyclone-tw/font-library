@@ -337,9 +337,12 @@ def sample_for(font: dict) -> str:
     return SAMPLES["default"]
 
 
+REPO_URL = "https://github.com/cyclone-tw/font-library"
+
+
 def cmd_showcase(args):
     fonts = load_fonts()
-    faces, cards, gf_families = [], [], []
+    faces, cards, rows, gf_families = [], [], [], []
     for f in fonts:
         sample = sample_for(f)
         demo = IVS_DEMO if "IVS 選破音字" in f["features"] else ""
@@ -355,16 +358,33 @@ def cmd_showcase(args):
             gf_families.append((css_family, text))
             render = "google"
         cards.append(card_html(f, css_family, sample, demo, render))
+        rows.append(license_row(f))
     gf_links = "\n".join(
         f'<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family={urllib.parse.quote_plus(fam)}&text={urllib.parse.quote(t)}&display=swap">'
         for fam, t in gf_families
     )
-    tpl = (ROOT / "scripts/showcase.template.html").read_text(encoding="utf-8")
-    page = (tpl.replace("{{GF_LINKS}}", gf_links)
-               .replace("{{FONT_FACES}}", "\n".join(faces))
-               .replace("{{CARDS}}", "\n".join(cards))
-               .replace("{{COUNT}}", str(len(fonts)))
-               .replace("{{BUILT}}", date.today().isoformat()))
+    rfn = "、".join(f"{f['name']}（{'、'.join(f['license']['reserved_names'])}）"
+                   for f in fonts if f["license"]["reserved_names"])
+    values = {
+        "GF_LINKS": gf_links,
+        "FONT_FACES": "\n".join(faces),
+        "CARDS": "\n".join(cards),
+        "LICENSE_ROWS": "\n".join(rows),
+        "RFN_LIST": html.escape(rfn),
+        "COUNT": str(len(fonts)),
+        "N_COMMERCIAL": str(sum(f["license"]["commercial"] for f in fonts)),
+        "N_ZHUYIN": str(sum("注音" in f["features"] for f in fonts)),
+        "N_GF": str(sum(bool(f.get("web", {}).get("google_fonts")) for f in fonts)),
+        "N_OFL": str(sum(f["license"]["spdx"] == ["OFL-1.1"] for f in fonts)),
+        "VERIFIED": max(f["license"]["verified"] for f in fonts),
+        "BUILT": date.today().isoformat(),
+    }
+    page = (ROOT / "scripts/showcase.template.html").read_text(encoding="utf-8")
+    for k, v in values.items():
+        page = page.replace("{{" + k + "}}", v)
+    left = re.findall(r"\{\{[A-Z_]+\}\}", page)
+    if left:
+        sys.exit(f"[錯誤] 範本還有沒填的欄位：{sorted(set(left))}")
     out = Path(args.output)
     out.write_text(page, encoding="utf-8")
     print(f"[完成] {out}（{out.stat().st_size/1024:.0f} KB，{len(fonts)} 套字型）")
@@ -374,13 +394,53 @@ def chip(text: str, cls: str = "") -> str:
     return f'<span class="chip {cls}">{html.escape(text)}</span>'
 
 
-def card_html(f: dict, family: str | None, sample: str, demo: str, render: str) -> str:
-    lic, src, web = f["license"], f["source"], f.get("web", {})
+def web_route(f: dict) -> tuple[str, str]:
+    """回傳（狀態, 說明）：這套字型放上網頁的做法。"""
+    if f.get("web", {}).get("google_fonts"):
+        return "yes", f"Google Fonts 直接載入（{f['web']['google_fonts']}）"
+    if f["license"]["modify"]:
+        return "yes", "用 fontlib.py subset 裁出用到的字"
+    return "no", "不能轉成網頁字型"
+
+
+def uses_html(f: dict) -> str:
+    lic = f["license"]
     e = html.escape
-    tags = {"注音": "zhuyin", "漢語拼音": "pinyin"}
-    data_tags = " ".join(v for k, v in tags.items() if k in f["features"])
+    rn = "、".join(lic["reserved_names"])
+    items = [("yes", "印學習單、做簡報", "安裝到電腦後直接用")]
+    items.append(("yes", "收費教材、商業作品", "可以") if lic["commercial"] else ("no", "收費教材、商業作品", "不可以"))
+    items.append((*web_route(f)[:1], "放上網頁", web_route(f)[1]))
+    if not lic["modify"]:
+        items.append(("no", "修改、裁字", "授權禁止改作"))
+    elif rn:
+        items.append(("warn", "修改、裁字", f"可以，但要換名字（保留名稱：{rn}）"))
+    else:
+        items.append(("yes", "修改、裁字", "可以"))
+    items.append(("warn", "署名", "一定要放，用下方「複製署名」") if lic["attribution_required"]
+                 else ("yes", "署名", "不強制，建議放"))
+    mark = {"yes": "✓", "no": "✕", "warn": "!"}
+    li = "".join(f'<li class="{c}"><i aria-hidden="true">{mark[c]}</i><b>{e(t)}</b><span>{e(d)}</span></li>'
+                 for c, t, d in items)
+    return f'<ul class="can" aria-label="可以怎麼用">{li}</ul>'
+
+
+def upstream_link(f: dict) -> str:
+    src = f["source"]
+    if src["kind"] in ("github-release", "github-file"):
+        return f"https://github.com/{src['repo']}"
+    return src.get("homepage") or src.get("url")
+
+
+def card_html(f: dict, family: str | None, sample: str, demo: str, render: str) -> str:
+    lic = f["license"]
+    e = html.escape
+    tags = [v for k, v in {"注音": "zhuyin", "漢語拼音": "pinyin"}.items() if k in f["features"]]
     if lic["modify"]:
-        data_tags += " web"
+        tags.append("web")
+    if f.get("web", {}).get("google_fonts"):
+        tags.append("gf")
+    if not lic["attribution_required"]:
+        tags.append("noattr")
     style_attr = f" style=\"font-family:'{family}',var(--fallback)\"" if family else ""
     if family:
         specimen = (f'<div class="specimen"{style_attr}>'
@@ -392,40 +452,47 @@ def card_html(f: dict, family: str | None, sample: str, demo: str, render: str) 
     else:
         specimen = ('<div class="specimen none"><p>這套字型的授權禁止改作，說明頁不嵌入裁切後的字型。'
                     '請整檔安裝在電腦上使用。</p></div>')
-    perms = [
-        ("可商用", lic["commercial"]),
-        ("可裁字放網頁", lic["modify"]),
-        ("要署名", lic["attribution_required"]),
-    ]
-    perm_html = "".join(f'<li class="{"yes" if ok else "no"}">{"✓" if ok else "✕"} {e(t)}</li>' if t != "要署名"
-                        else f'<li class="{"warn" if ok else "yes"}">{"須署名" if ok else "署名非必要"}</li>' for t, ok in perms)
-    rfn = f'<p class="rfn">保留名稱：{e("、".join(lic["reserved_names"]))}。修改或裁字後要改名，腳本會自動處理。</p>' if lic["reserved_names"] else ""
-    if src["kind"] in ("github-release", "github-file"):
-        link = f"https://github.com/{src['repo']}"
-    else:
-        link = src.get("homepage") or src.get("url")
-    gf = web.get("google_fonts")
-    gf_html = f'<li>Google Fonts：<code>{e(gf)}</code></li>' if gf else '<li>Google Fonts：沒有，網頁要自己裁字</li>'
     src_label = {"embed": "樣張：本機裁字嵌入", "google": "樣張：Google Fonts", "none": "沒有樣張"}[render]
-    return f'''<article class="card" data-style="{e(f['style'])}" data-tags="{data_tags.strip()}" id="{e(f['id'])}">
+    return f'''<article class="card" data-style="{e(f['style'])}" data-tags="{' '.join(tags)}" id="{e(f['id'])}">
   <header>
     <h3>{e(f['name'])}</h3>
     <p class="en">{e(f['name_en'])}</p>
     <div class="chips">{chip(f['style'], 'style')}{''.join(chip(x) for x in f['features'])}</div>
   </header>
   {specimen}
-  <ul class="perms">{perm_html}</ul>
-  <p class="lic"><strong>{e(' + '.join(lic['spdx']))}</strong>　{e(lic['summary'])}</p>
-  {rfn}
+  {uses_html(f)}
+  <p class="lic"><strong>{e(' + '.join(lic['spdx']))}</strong>{e(lic['summary'])}</p>
   <p class="notes">{e(f['notes'])}</p>
   <p class="use">適合：{e('、'.join(f['use']))}</p>
   <div class="attr"><code id="attr-{e(f['id'])}">{e(lic['attribution'])}</code><button type="button" class="copy" data-target="attr-{e(f['id'])}">複製署名</button></div>
   <ul class="meta">
-    <li>版本：{e(version_of(f))}</li>
-    {gf_html}
-    <li><a href="{e(link)}" target="_blank" rel="noopener">上游來源</a>　<span class="muted">授權查證 {e(lic['verified'])}・{src_label}</span></li>
+    <li>版本 {e(version_of(f))}</li>
+    <li>授權查證 {e(lic['verified'])}</li>
+    <li><a href="{REPO_URL}/tree/main/licenses/{e(f['id'])}" target="_blank" rel="noopener">授權原文</a></li>
+    <li><a href="{e(upstream_link(f))}" target="_blank" rel="noopener">上游來源</a></li>
+    <li>{src_label}</li>
   </ul>
 </article>'''
+
+
+def license_row(f: dict) -> str:
+    lic = f["license"]
+    e = html.escape
+    yes, no = '<span class="y">✓</span>', '<span class="n">✕</span>'
+    if not lic["modify"]:
+        mod = f"{no}禁止"
+    elif lic["reserved_names"]:
+        mod = '<span class="c">!</span>可以，要改名'
+    else:
+        mod = f"{yes}可以"
+    attr = '<span class="c">!</span>必須' if lic["attribution_required"] else "非必要，建議放"
+    state, route = web_route(f)
+    route = {"yes": yes, "no": no}[state] + e(route.split("（")[0])
+    return (f'            <tr><th scope="row"><a href="#{e(f["id"])}">{e(f["name"])}</a></th>'
+            f'<td><code>{e(" + ".join(lic["spdx"]))}</code></td>'
+            f'<td>{yes if lic["commercial"] else no}</td><td>{mod}</td><td>{attr}</td>'
+            f'<td>{e("、".join(lic["reserved_names"])) or "—"}</td><td>{route}</td>'
+            f'<td><a href="{REPO_URL}/tree/main/licenses/{e(f["id"])}" target="_blank" rel="noopener">licenses/{e(f["id"])}</a></td></tr>')
 
 
 def main():

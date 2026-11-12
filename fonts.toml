@@ -140,8 +140,8 @@ name = "全字庫正楷體"
 name_en = "TW-Kai"
 style = "楷書"
 features = ["政府標準字形", "收字量大"]
-use = ["正式文件", "學習單", "udl-learning 的 --kai 備援"]
-notes = "數位發展部全字庫。官方提供兩種授權擇一：政府資料開放授權條款第 1 版，或 OFL 1.1。本清單選 OFL 1.1。壓縮檔內有多個檔案，member 用萬用字元比對。"
+use = ["正式文件", "學習單", "網頁標楷備援"]
+notes = "數位發展部全字庫。官方提供兩種授權擇一：政府資料開放授權條款第 1 版，或 OFL 1.1。本清單選 OFL 1.1。官方壓縮檔另含擴充字集（Plus、Ext-G），本清單只用主檔。"
 
 [font.source]
 kind = "url"
@@ -285,7 +285,7 @@ name_en = "Naikai Font"
 style = "手寫"
 features = ["五種字重", "收字約 4.7 萬"]
 use = ["標題", "親切口吻的說明文字"]
-notes = "以瀨戶字體改造，手寫感強。上游沒有 release 檔，直接釘選 repo commit。"
+notes = "以瀨戶字體改造，手寫感強。上游沒有正式發布版，本清單固定在一個 commit。"
 
 [font.source]
 kind = "github-file"
@@ -498,7 +498,7 @@ name_en = "Cubic 11"
 style = "像素"
 features = ["11×11 像素", "遊戲感"]
 use = ["遊戲化教材標題", "UDL 冒險 RPG 介面"]
-notes = "udl-learning 已在用（SpedAI-Assets/udl/fonts/cubic-11-v1.500）。"
+notes = "11×11 像素的繁中字型，適合遊戲化介面、RPG 對話框。"
 
 [font.source]
 kind = "github-file"
