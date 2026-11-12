@@ -371,6 +371,8 @@ def cmd_showcase(args):
         "CARDS": "\n".join(cards),
         "LICENSE_ROWS": "\n".join(rows),
         "RFN_LIST": html.escape(rfn),
+        "RFN_NAMES": html.escape("、".join(f["name"] for f in fonts if f["license"]["reserved_names"])),
+        "ATTR_LIST": "、".join(f"<b>{html.escape(f['name'])}</b>" for f in fonts if f["license"]["attribution_required"]),
         "COUNT": str(len(fonts)),
         "N_COMMERCIAL": str(sum(f["license"]["commercial"] for f in fonts)),
         "N_ZHUYIN": str(sum("注音" in f["features"] for f in fonts)),

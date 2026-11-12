@@ -271,6 +271,7 @@ pre .cm { color: var(--gold-2); }
 /* ---- 窄螢幕：左欄收成頁首下的一條篩選列 ---- */
 @media (max-width: 1100px) {
   :root { --top-h: 64px; }
+  html { scroll-padding-top: calc(var(--top-h) + 96px); }
   .shell { grid-template-columns: minmax(0, 1fr); gap: 20px; padding-top: 0; }
   .side { position: sticky; top: var(--top-h); z-index: 20; max-height: none; overflow: visible; margin: 0 calc(-1 * var(--gutter)); padding: 10px var(--gutter); background: var(--parchment); border-bottom: 2px solid var(--line); gap: 0; }
   .side-box { background: none; border: 0; box-shadow: none; padding: 0; gap: 6px; }
@@ -410,8 +411,8 @@ pre .cm { color: var(--gold-2); }
           <p>這裡 {{COUNT}} 套字型都可以免費用在學習單、網頁，也可以用在收費的教材或課程。要注意的只有三件事：</p>
           <ol>
             <li><b>教育部標準楷書</b>不能裁字、不能轉成網頁字型，只能整檔安裝在電腦上使用。</li>
-            <li>有<b>保留名稱</b>的字型（字嗨、思源／源樣／源泉系列、俐方體），修改或裁字之後要換名字。</li>
-            <li><b>字嗨注音標楷</b>和<b>教育部標準楷書</b>一定要署名；其他字型署名不是必要，但建議放。</li>
+            <li>有<b>保留名稱</b>的字型（{{RFN_NAMES}}），修改或裁字之後要換名字。</li>
+            <li>{{ATTR_LIST}}一定要署名；其他字型署名不是必要，但建議放。</li>
           </ol>
         </div>
       </div>
@@ -434,7 +435,7 @@ pre .cm { color: var(--gold-2); }
             <tr><th scope="row">只裁出用到的字，做成網頁字型</th><td><span class="y">✓</span>可以；有保留名稱的要改名（腳本會自動改）</td><td><span class="y">✓</span>可以；要改名，也要署名</td><td><span class="n">✕</span>不行，裁字就是改作</td></tr>
             <tr><th scope="row">修改字形、跟別的字型合併</th><td><span class="y">✓</span>可以；新字型仍要用 OFL 釋出，不能用保留名稱</td><td><span class="y">✓</span>可以；同左，並保留原作者署名</td><td><span class="n">✕</span>不行</td></tr>
             <tr><th scope="row">把字型檔附在作品、壓縮檔或 repo 裡給別人</th><td><span class="c">!</span>可以，但要一起附上版權聲明和 OFL 原文</td><td><span class="c">!</span>可以，附上兩份授權原文與署名</td><td><span class="c">!</span>只能原檔不改，附上標示與授權連結</td></tr>
-            <tr><th scope="row">單獨販售字型檔</th><td><span class="n">✕</span>不行，OFL 禁止單獨賣字型</td><td><span class="n">✕</span>不行（漢字以外的部分是 OFL）</td><td><span class="n">✕</span>不要做；這是官方免費提供的檔案</td></tr>
+            <tr><th scope="row">單獨販售字型檔</th><td><span class="n">✕</span>不行，OFL 禁止單獨賣字型</td><td><span class="n">✕</span>不行（漢字以外的部分是 OFL）</td><td><span class="c">!</span>授權不禁止原檔轉散布，但這是官方免費提供的檔案，不建議販售</td></tr>
           </tbody>
         </table>
       </div>

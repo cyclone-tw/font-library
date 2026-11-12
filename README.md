@@ -80,10 +80,6 @@ uv run --with fonttools --with brotli python scripts/fontlib.py showcase
 
 ## 授權
 
-本 repo 的清單與腳本：MIT。各字型的授權見 `licenses/<id>/` 與 `fonts.toml`，以上游原文為準。
-
-## 授權
-
 清單（`fonts.toml`）、腳本與網頁程式以 MIT 授權公開（見 `LICENSE`）。
 `docs/assets/` 裡的奧瑞恩插圖與 Cyclone 龍頭像 © 2026 Cyclone，不在 MIT 授權範圍內。
-各字型的授權見 `licenses/<id>/`。
+各字型的授權見 `licenses/<id>/` 與 `fonts.toml`，以上游原文為準。
