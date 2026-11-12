@@ -20,5 +20,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
-This license covers the manifest and scripts only. Each font keeps its own
-license; see fonts.toml and licenses/<id>/.
+This license covers the manifest, the scripts and the site code in docs/.
+Each font keeps its own license; see fonts.toml and licenses/<id>/.
+Images in docs/assets/ (Aurelion illustrations and the Cyclone avatar) are
+(c) 2026 Cyclone, all rights reserved, and are not covered by this license.
